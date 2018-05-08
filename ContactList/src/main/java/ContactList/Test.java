@@ -1,12 +1,15 @@
 package ContactList;
 
 import ContactList.Connections.PostgreSQLConnection;
+import ContactList.Management.DBManagement;
+import ContactList.Management.PostgreSQLDBManagement;
 
 public class Test {
 
     public static void main(String[] args) {
-        PostgreSQLConnection PSConnection = new PostgreSQLConnection();
-        DBManagement dbManagement = new DBManagement(PSConnection);
+        PostgreSQLConnection PSConnection = PostgreSQLConnection.getInstance();
+        PSConnection.setConnectionInfo();
+        DBManagement dbManagement = new PostgreSQLDBManagement(PSConnection);
 
         dbManagement.deleteAllFromDBTable();
 

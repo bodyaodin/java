@@ -1,4 +1,4 @@
-package ContactList;
+package ContactList.Management;
 
 import ContactList.Connections.PostgreSQLConnection;
 
@@ -7,14 +7,14 @@ import java.sql.*;
 /**
  * For now all methods working only with one table!!!
  */
-public class DBManagement {
+public class PostgreSQLDBManagement implements DBManagement {
 
     PostgreSQLConnection postgreSQLConnection;
     Connection connection;
 
-    private DBManagement() {}
+    private PostgreSQLDBManagement() {}
 
-    public DBManagement(PostgreSQLConnection postgreSQLConnection) {
+    public PostgreSQLDBManagement(PostgreSQLConnection postgreSQLConnection) {
         this.postgreSQLConnection = postgreSQLConnection;
     }
 

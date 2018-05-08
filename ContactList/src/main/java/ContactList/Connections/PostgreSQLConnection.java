@@ -4,19 +4,61 @@ package ContactList.Connections;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
 
 public class PostgreSQLConnection {
+
+    private static PostgreSQLConnection instance;
+
+    /**
+     * ContactList configuration from properties file
+     */
+    private String configFileName = "ContactListConfig.properties";
+    private Properties configuration;
 
     /**
      * URL, login and password for PostgreSQL database on localhost
      */
-    private String url = "jdbc:postgresql://localhost:5432/ContactListDB";
-    private String login = "postgres";
-    private String password = "postgres";
+    private String url;
+    private String login;
+    private String password;
 
-    public PostgreSQLConnection(){}
+    /**
+     * private constructor to exclude creation of instance
+     */
+    private PostgreSQLConnection(){}
 
-    public PostgreSQLConnection(String url, String login, String password){
+    /**
+     * @return instance of PostgreSQLConnection if it exists or create new one
+     */
+    public static PostgreSQLConnection getInstance() {
+        if (instance == null) {
+            PostgreSQLConnection.instance = new PostgreSQLConnection();
+        }
+        return instance;
+    }
+
+    /**
+     * setting info for connection to DB
+     * @param url PostgreSQL url for connection to data base
+     */
+    public void setConnectionInfo () {
+        configuration = new Properties();
+        try {
+            configuration.load(new FileReader(configFileName));
+
+            this.url = configuration.getProperty("postgreSQL.url");
+            this.login = configuration.getProperty("postgreSQL.login");
+            this.password = configuration.getProperty("postgreSQL.password");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setConnectionInfo (String url, String login, String password){
         this.url = url;
         this.login = login;
         this.password = password;
