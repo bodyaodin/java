@@ -1,15 +1,21 @@
 package ContactList;
 
+import ContactList.Connections.MongoConnection;
 import ContactList.Connections.PostgreSQLConnection;
 import ContactList.Management.DBManagement;
+import ContactList.Management.MongoDBManagement;
 import ContactList.Management.PostgreSQLDBManagement;
 
 public class Test {
 
     public static void main(String[] args) {
-        PostgreSQLConnection PSConnection = PostgreSQLConnection.getInstance();
-        PSConnection.setConnectionInfo();
-        DBManagement dbManagement = new PostgreSQLDBManagement(PSConnection);
+//        PostgreSQLConnection PSConnection = PostgreSQLConnection.getInstance();
+//        PSConnection.setConnectionInfo();
+//        DBManagement dbManagement = new PostgreSQLDBManagement(PSConnection);
+
+        MongoConnection mongoConnection = MongoConnection.getInstance();
+        mongoConnection.setConnectionInfo();
+        DBManagement dbManagement = new MongoDBManagement(mongoConnection);
 
         dbManagement.deleteAllFromDBTable();
 

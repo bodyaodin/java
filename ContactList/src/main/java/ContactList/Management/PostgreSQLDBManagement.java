@@ -21,6 +21,7 @@ public class PostgreSQLDBManagement implements DBManagement {
     /**
      * method for deleting all data from DB table
      */
+    @Override
     public void deleteAllFromDBTable() {
         String deleteQuery = "DELETE FROM PEOPLELIST";
 
@@ -45,6 +46,7 @@ public class PostgreSQLDBManagement implements DBManagement {
     /**
      * method for deleting some data from DB table where name is ...
      */
+    @Override
     public void deleteFromDBTableForName(String name) {
         String deleteQuery = "DELETE FROM PEOPLELIST WHERE FIRST_NAME = '" + name + "'";
 
@@ -69,6 +71,7 @@ public class PostgreSQLDBManagement implements DBManagement {
     /**
      * method for inserting data to DB table
      */
+    @Override
     public void insertToDBTable(String firstName, String lastName, String email, String phone) {
         String updateQuery = "INSERT INTO PEOPLELIST (FIRST_NAME, LAST_NAME, EMAIL, PHONE) VALUES (?, ?, ?, ?)";
 
@@ -97,6 +100,7 @@ public class PostgreSQLDBManagement implements DBManagement {
     /**
      * method for selecting all data from DB table
      */
+    @Override
     public void selectAllFromDBTable() {
         String selectQuery = "SELECT * FROM PEOPLELIST";
 
@@ -128,6 +132,7 @@ public class PostgreSQLDBManagement implements DBManagement {
     /**
      * method for selecting some data from DB table where name is ...
      */
+    @Override
     public void selectFromDBTableForName(String name) {
         String selectQuery = "SELECT * FROM PEOPLELIST WHERE FIRST_NAME = '" + name + "'";
 
