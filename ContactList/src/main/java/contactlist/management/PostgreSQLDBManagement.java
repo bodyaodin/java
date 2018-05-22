@@ -1,6 +1,6 @@
-package ContactList.Management;
+package contactlist.management;
 
-import ContactList.Connections.PostgreSQLConnection;
+import contactlist.connections.PostgreSQLConnection;
 
 import java.sql.*;
 

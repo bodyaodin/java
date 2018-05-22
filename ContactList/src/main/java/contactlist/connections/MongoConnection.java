@@ -1,4 +1,4 @@
-package ContactList.Connections;
+package contactlist.connections;
 
 import java.io.FileReader;
 import java.io.IOException;

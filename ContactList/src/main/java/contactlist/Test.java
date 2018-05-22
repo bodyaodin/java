@@ -1,10 +1,8 @@
-package ContactList;
+package contactlist;
 
-import ContactList.Connections.MongoConnection;
-import ContactList.Connections.PostgreSQLConnection;
-import ContactList.Management.DBManagement;
-import ContactList.Management.MongoDBManagement;
-import ContactList.Management.PostgreSQLDBManagement;
+import contactlist.connections.MongoConnection;
+import contactlist.management.DBManagement;
+import contactlist.management.MongoDBManagement;
 
 public class Test {
 

@@ -1,4 +1,4 @@
-package ContactList.Connections;
+package contactlist.connections;
 
 
 import java.sql.Connection;

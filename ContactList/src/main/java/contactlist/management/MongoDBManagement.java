@@ -1,6 +1,6 @@
-package ContactList.Management;
+package contactlist.management;
 
-import ContactList.Connections.MongoConnection;
+import contactlist.connections.MongoConnection;
 import com.mongodb.*;
 
 public class MongoDBManagement implements DBManagement {

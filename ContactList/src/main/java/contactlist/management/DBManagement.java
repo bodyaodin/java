@@ -1,4 +1,4 @@
-package ContactList.Management;
+package contactlist.management;
 
 /**
  * Interface for management for data bases
