@@ -5,17 +5,20 @@ import contactlist.connections.PostgreSQLConnection;
 import contactlist.management.DBManagement;
 import contactlist.management.MongoDBManagement;
 import contactlist.management.PostgreSQLDBManagement;
+import org.springframework.context.support.AbstractApplicationContext;
 
 public class Test {
 
     public static void main(String[] args) {
-//        PostgreSQLConnection psConnection = PostgreSQLConnection.getInstance();
-//        psConnection.setConnectionInfo();
-//        DBManagement dbManagement = new PostgreSQLDBManagement(psConnection);
+        AbstractApplicationContext abstractApplicationContext = SpringContext.getAbstractApplicationContext();
 
-        MongoConnection mongoConnection = MongoConnection.getInstance();
+//        PostgreSQLConnection psConnection = (PostgreSQLConnection) abstractApplicationContext.getBean("PostgreSQLConnection");
+//        psConnection.setConnectionInfo();
+//        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("PostgreSQLDBManagement");
+
+        MongoConnection mongoConnection = (MongoConnection) abstractApplicationContext.getBean("MongoConnection");
         mongoConnection.setConnectionInfo();
-        DBManagement dbManagement = new MongoDBManagement(mongoConnection);
+        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("MongoDBManagement");
 
         dbManagement.deleteAllFromDBTable();
 

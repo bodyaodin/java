@@ -12,7 +12,7 @@ public class MongoConnection {
     /**
      * ContactList configuration from properties file
      */
-    private String configFileName = "ContactListConfig.properties";
+    private String configFileName;
     private Properties configuration;
 
     /**
@@ -41,6 +41,10 @@ public class MongoConnection {
             MongoConnection.instance = new MongoConnection();
         }
         return instance;
+    }
+
+    public void setConfigFileName(String configFileName) {
+        this.configFileName = configFileName;
     }
 
     /**

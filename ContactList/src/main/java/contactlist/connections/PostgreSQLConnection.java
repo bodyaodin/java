@@ -16,7 +16,7 @@ public class PostgreSQLConnection {
     /**
      * ContactList configuration from properties file
      */
-    private String configFileName = "ContactListConfig.properties";
+    private String configFileName;
     private Properties configuration;
 
     /**
@@ -39,6 +39,10 @@ public class PostgreSQLConnection {
             PostgreSQLConnection.instance = new PostgreSQLConnection();
         }
         return instance;
+    }
+
+    public void setConfigFileName(String configFileName) {
+        this.configFileName = configFileName;
     }
 
     /**
