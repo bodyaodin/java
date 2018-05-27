@@ -10,13 +10,13 @@ public class Test {
     public static void main(String[] args) {
         AbstractApplicationContext abstractApplicationContext = SpringContext.getAbstractApplicationContext();
 
-//        PostgreSQLConnection psConnection = (PostgreSQLConnection) abstractApplicationContext.getBean("PostgreSQLConnection");
-//        psConnection.setConnectionInfo();
-//        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("PostgreSQLDBManagement");
+        PostgreSQLConnection psConnection = (PostgreSQLConnection) abstractApplicationContext.getBean("PostgreSQLConnection");
+        psConnection.setConnectionInfo();
+        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("PostgreSQLDBManagement");
 
-        MongoConnection mongoConnection = (MongoConnection) abstractApplicationContext.getBean("MongoConnection");
-        mongoConnection.setConnectionInfo();
-        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("MongoDBManagement");
+//        MongoConnection mongoConnection = (MongoConnection) abstractApplicationContext.getBean("MongoConnection");
+//        mongoConnection.setConnectionInfo();
+//        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("MongoDBManagement");
 
         dbManagement.deleteAllFromDBTable("Peoplelist");
 
@@ -32,6 +32,7 @@ public class Test {
 
         dbManagement.selectFromDBTableForName("Peoplelist","Dasha");
 
+        abstractApplicationContext.close();
 
     }
 

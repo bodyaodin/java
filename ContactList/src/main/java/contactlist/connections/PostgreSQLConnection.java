@@ -1,11 +1,8 @@
 package contactlist.connections;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Properties;
 
 
@@ -14,9 +11,8 @@ public class PostgreSQLConnection {
     private static PostgreSQLConnection instance;
 
     /**
-     * ContactList configuration from properties file
+     * ContactList configuration from properties
      */
-    private String configFileName;
     private Properties configuration;
 
     /**
@@ -26,10 +22,15 @@ public class PostgreSQLConnection {
     private String login;
     private String password;
 
+    public void setConfiguration(Properties configuration) {
+        this.configuration = configuration;
+    }
+
     /**
      * private constructor to exclude creation of instance
      */
-    private PostgreSQLConnection(){}
+    private PostgreSQLConnection() {
+    }
 
     /**
      * @return instance of PostgreSQLConnection if it exists or create new one
@@ -41,27 +42,16 @@ public class PostgreSQLConnection {
         return instance;
     }
 
-    public void setConfigFileName(String configFileName) {
-        this.configFileName = configFileName;
-    }
-
     /**
      * setting info for connection to DB
      */
-    public void setConnectionInfo () {
-        configuration = new Properties();
-        try {
-            configuration.load(new FileReader(configFileName));
-
-            this.url = configuration.getProperty("postgreSQL.url");
-            this.login = configuration.getProperty("postgreSQL.login");
-            this.password = configuration.getProperty("postgreSQL.password");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void setConnectionInfo() {
+        this.url = configuration.getProperty("postgreSQL.url");
+        this.login = configuration.getProperty("postgreSQL.login");
+        this.password = configuration.getProperty("postgreSQL.password");
     }
 
-    public void setConnectionInfo (String url, String login, String password){
+    public void setConnectionInfo(String url, String login, String password) {
         this.url = url;
         this.login = login;
         this.password = password;
@@ -73,7 +63,7 @@ public class PostgreSQLConnection {
     public Connection getConnectionToDB() {
         Connection connection = null;
         try {
-            // register PostgreSQL driver in DriverManager
+            // registering PostgreSQL driver in DriverManager
             Class.forName("org.postgresql.Driver");
 
             connection = DriverManager.getConnection(url, login, password);

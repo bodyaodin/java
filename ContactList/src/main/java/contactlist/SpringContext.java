@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringContext {
 
-    private static String configName = "Config.xml";
+    private static String configName = "SpringConfig.xml";
     private static AbstractApplicationContext abstractApplicationContext;
 
     private SpringContext() {}

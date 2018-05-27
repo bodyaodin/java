@@ -1,7 +1,5 @@
 package contactlist.connections;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Properties;
 import com.mongodb.*;
 
@@ -10,9 +8,8 @@ public class MongoConnection {
     private static MongoConnection instance;
 
     /**
-     * ContactList configuration from properties file
+     * ContactList configuration from properties
      */
-    private String configFileName;
     private Properties configuration;
 
     /**
@@ -28,10 +25,15 @@ public class MongoConnection {
         return dataBase;
     }
 
+    public void setConfiguration(Properties configuration) {
+        this.configuration = configuration;
+    }
+
     /**
      * private constructor to exclude creation of instance
      */
-    private MongoConnection(){}
+    private MongoConnection() {
+    }
 
     /**
      * @return instance of PostgreSQLConnection if it exists or create new one
@@ -43,26 +45,15 @@ public class MongoConnection {
         return instance;
     }
 
-    public void setConfigFileName(String configFileName) {
-        this.configFileName = configFileName;
-    }
-
     /**
      * setting info for connection to DB
      */
     public void setConnectionInfo() {
-        configuration = new Properties();
-        try {
-            configuration.load(new FileReader(configFileName));
-
-            this.host = configuration.getProperty("mongo.host");
-            this.port = Integer.parseInt(configuration.getProperty("mongo.port"));
-            this.dataBase = configuration.getProperty("mongo.dataBase");
-            this.login = configuration.getProperty("mongo.login");
-            this.password = configuration.getProperty("mongo.password");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.host = configuration.getProperty("mongo.host");
+        this.port = Integer.parseInt(configuration.getProperty("mongo.port"));
+        this.dataBase = configuration.getProperty("mongo.dataBase");
+        this.login = configuration.getProperty("mongo.login");
+        this.password = configuration.getProperty("mongo.password");
     }
 
     public void setConnectionInfo(String host, int port, String dataBase, String login, String password) {

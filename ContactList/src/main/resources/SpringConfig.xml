@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+    <!-- Connections to DB -->
+    <bean id="MongoConnection" class="contactlist.connections.MongoConnection" factory-method="getInstance">
+        <property name="configuration">
+            <props>
+                <prop key="mongo.host">${mongo.host}</prop>
+                <prop key="mongo.port">${mongo.port}</prop>
+                <prop key="mongo.dataBase">${mongo.dataBase}</prop>
+                <prop key="mongo.login">${mongo.login}</prop>
+                <prop key="mongo.password">${mongo.password}</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="PostgreSQLConnection" class="contactlist.connections.PostgreSQLConnection" factory-method="getInstance">
+        <property name="configuration">
+            <props>
+                <prop key="postgreSQL.url">${postgreSQL.url}</prop>
+                <prop key="postgreSQL.login">${postgreSQL.login}</prop>
+                <prop key="postgreSQL.password">${postgreSQL.password}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- DB Managements -->
+    <bean id="MongoDBManagement" class="contactlist.management.MongoDBManagement">
+        <constructor-arg ref="MongoConnection"/>
+    </bean>
+    <bean id="PostgreSQLDBManagement" class="contactlist.management.PostgreSQLDBManagement">
+        <constructor-arg ref="PostgreSQLConnection"/>
+    </bean>
+
+    <!-- Properties configuration files -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:ContactListConfig.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+    </bean>
+
+</beans>
