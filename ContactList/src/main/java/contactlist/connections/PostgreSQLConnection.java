@@ -47,7 +47,6 @@ public class PostgreSQLConnection {
 
     /**
      * setting info for connection to DB
-     * @param url PostgreSQL url for connection to data base
      */
     public void setConnectionInfo () {
         configuration = new Properties();

@@ -9,9 +9,6 @@ public class MongoDBManagement implements DBManagement {
     Mongo mongo;
     DB dataBase;
 
-    //name of collection
-    public String collection = "Peoplelist";
-
     private MongoDBManagement() {}
 
     public MongoDBManagement (MongoConnection mongoConnection) {
@@ -22,16 +19,16 @@ public class MongoDBManagement implements DBManagement {
      * method for deleting all data from DB collection
      */
     @Override
-    public void deleteAllFromDBTable() {
+    public void deleteAllFromDBTable(String tableName) {
         try {
             mongo = mongoConnection.getConnectionToDB();
             dataBase = mongo.getDB(mongoConnection.getDataBase());
-            DBCollection dbCollection = dataBase.getCollection(collection);
+            DBCollection dbCollection = dataBase.getCollection(tableName);
 
             BasicDBObject deleteQuery = new BasicDBObject();
             dbCollection.remove(deleteQuery);
 
-            System.out.println("All data was deleted from " + collection + " collection!");
+            System.out.println("All data was deleted from " + tableName + " collection!");
             System.out.println();
         } finally {
             mongo.close();
@@ -42,17 +39,17 @@ public class MongoDBManagement implements DBManagement {
      * method for deleting some data from DB collection where name is ...
      */
     @Override
-    public void deleteFromDBTableForName(String name) {
+    public void deleteFromDBTableForName(String tableName, String firstName) {
         try {
             mongo = mongoConnection.getConnectionToDB();
             dataBase = mongo.getDB(mongoConnection.getDataBase());
-            DBCollection dbCollection = dataBase.getCollection(collection);
+            DBCollection dbCollection = dataBase.getCollection(tableName);
 
             BasicDBObject deleteDoc = new BasicDBObject();
-            deleteDoc.put("FIRST_NAME", name);
+            deleteDoc.put("FIRST_NAME", firstName);
             dbCollection.remove(deleteDoc);
 
-            System.out.println("Document with name " + name + " was deleted from collection!");
+            System.out.println("Document with name " + firstName + " was deleted from " + tableName + "!");
             System.out.println();
         } finally {
             mongo.close();
@@ -63,11 +60,11 @@ public class MongoDBManagement implements DBManagement {
      * method for inserting data to DB collection
      */
     @Override
-    public void insertToDBTable(String firstName, String lastName, String email, String phone) {
+    public void insertToDBTable(String tableName, String firstName, String lastName, String email, String phone) {
         try {
             mongo = mongoConnection.getConnectionToDB();
             dataBase = mongo.getDB(mongoConnection.getDataBase());
-            DBCollection dbCollection = dataBase.getCollection(collection);
+            DBCollection dbCollection = dataBase.getCollection(tableName);
 
             BasicDBObject insertDoc = new BasicDBObject();
             insertDoc.put("FIRST_NAME", firstName);
@@ -76,7 +73,7 @@ public class MongoDBManagement implements DBManagement {
             insertDoc.put("PHONE", phone);
             dbCollection.insert(insertDoc);
 
-            System.out.printf("%s %s was added to %s!%n", firstName, lastName, collection);
+            System.out.printf("%s %s was added to %s!%n", firstName, lastName, tableName);
             System.out.println();
         } finally {
             mongo.close();
@@ -87,11 +84,11 @@ public class MongoDBManagement implements DBManagement {
      * method for selecting all data from DB collection
      */
     @Override
-    public void selectAllFromDBTable() {
+    public void selectAllFromDBTable(String tableName) {
         try {
             mongo = mongoConnection.getConnectionToDB();
             dataBase = mongo.getDB(mongoConnection.getDataBase());
-            DBCollection dbCollection = dataBase.getCollection(collection);
+            DBCollection dbCollection = dataBase.getCollection(tableName);
 
             DBCursor documents = dbCollection.find();
             int i = 1; //counter of people
@@ -108,14 +105,14 @@ public class MongoDBManagement implements DBManagement {
      * method for selecting some data from DB collection where name is ...
      */
     @Override
-    public void selectFromDBTableForName(String name) {
+    public void selectFromDBTableForName(String tableName, String firstName) {
         try {
             mongo = mongoConnection.getConnectionToDB();
             dataBase = mongo.getDB(mongoConnection.getDataBase());
-            DBCollection dbCollection = dataBase.getCollection(collection);
+            DBCollection dbCollection = dataBase.getCollection(tableName);
 
             BasicDBObject selectDoc = new BasicDBObject();
-            selectDoc.put("FIRST_NAME", name);
+            selectDoc.put("FIRST_NAME", firstName);
 
             DBCursor documents = dbCollection.find(selectDoc);
             int i = 1; //counter of people

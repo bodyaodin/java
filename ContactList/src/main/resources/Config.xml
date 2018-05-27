@@ -8,6 +8,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!-- Connections to DB -->
     <bean id="MongoConnection" class="contactlist.connections.MongoConnection" factory-method="getInstance">
         <property name="configFileName" value="ContactListConfig.properties"/>
     </bean>
@@ -15,6 +16,7 @@
         <property name="configFileName" value="ContactListConfig.properties"/>
     </bean>
 
+    <!-- DB Managements -->
     <bean id="MongoDBManagement" class="contactlist.management.MongoDBManagement">
         <constructor-arg ref="MongoConnection"/>
     </bean>

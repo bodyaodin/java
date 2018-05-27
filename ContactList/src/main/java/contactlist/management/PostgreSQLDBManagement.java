@@ -1,12 +1,8 @@
 package contactlist.management;
 
 import contactlist.connections.PostgreSQLConnection;
-
 import java.sql.*;
 
-/**
- * For now all methods working only with one table!!!
- */
 public class PostgreSQLDBManagement implements DBManagement {
 
     PostgreSQLConnection postgreSQLConnection;
@@ -22,8 +18,8 @@ public class PostgreSQLDBManagement implements DBManagement {
      * method for deleting all data from DB table
      */
     @Override
-    public void deleteAllFromDBTable() {
-        String deleteQuery = "DELETE FROM PEOPLELIST";
+    public void deleteAllFromDBTable(String tableName) {
+        String deleteQuery = "DELETE FROM " + tableName.toUpperCase();
 
         try {
             try{
@@ -47,8 +43,8 @@ public class PostgreSQLDBManagement implements DBManagement {
      * method for deleting some data from DB table where name is ...
      */
     @Override
-    public void deleteFromDBTableForName(String name) {
-        String deleteQuery = "DELETE FROM PEOPLELIST WHERE FIRST_NAME = '" + name + "'";
+    public void deleteFromDBTableForName(String tableName, String firstName) {
+        String deleteQuery = "DELETE FROM " + tableName.toUpperCase() + " WHERE FIRST_NAME = '" + firstName + "'";
 
         try {
             try{
@@ -72,8 +68,8 @@ public class PostgreSQLDBManagement implements DBManagement {
      * method for inserting data to DB table
      */
     @Override
-    public void insertToDBTable(String firstName, String lastName, String email, String phone) {
-        String updateQuery = "INSERT INTO PEOPLELIST (FIRST_NAME, LAST_NAME, EMAIL, PHONE) VALUES (?, ?, ?, ?)";
+    public void insertToDBTable(String tableName, String firstName, String lastName, String email, String phone) {
+        String updateQuery = "INSERT INTO " + tableName.toUpperCase() + " (FIRST_NAME, LAST_NAME, EMAIL, PHONE) VALUES (?, ?, ?, ?)";
 
         try {
             try{
@@ -87,7 +83,7 @@ public class PostgreSQLDBManagement implements DBManagement {
                 statement.executeUpdate();
                 statement.close();
 
-                System.out.printf("%s %s was added to PeopleList!%n", firstName, lastName);
+                System.out.printf("%s %s was added to %s!%n", firstName, lastName, tableName);
                 System.out.println();
             } finally {
                 connection.close();
@@ -101,8 +97,8 @@ public class PostgreSQLDBManagement implements DBManagement {
      * method for selecting all data from DB table
      */
     @Override
-    public void selectAllFromDBTable() {
-        String selectQuery = "SELECT * FROM PEOPLELIST";
+    public void selectAllFromDBTable(String tableName) {
+        String selectQuery = "SELECT * FROM " + tableName.toUpperCase();
 
         try {
             try{
@@ -133,8 +129,8 @@ public class PostgreSQLDBManagement implements DBManagement {
      * method for selecting some data from DB table where name is ...
      */
     @Override
-    public void selectFromDBTableForName(String name) {
-        String selectQuery = "SELECT * FROM PEOPLELIST WHERE FIRST_NAME = '" + name + "'";
+    public void selectFromDBTableForName(String tableName, String firstName) {
+        String selectQuery = "SELECT * FROM " + tableName.toUpperCase() + " WHERE FIRST_NAME = '" + firstName + "'";
 
         try {
             try{

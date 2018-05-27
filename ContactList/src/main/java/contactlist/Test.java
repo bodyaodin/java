@@ -3,8 +3,6 @@ package contactlist;
 import contactlist.connections.MongoConnection;
 import contactlist.connections.PostgreSQLConnection;
 import contactlist.management.DBManagement;
-import contactlist.management.MongoDBManagement;
-import contactlist.management.PostgreSQLDBManagement;
 import org.springframework.context.support.AbstractApplicationContext;
 
 public class Test {
@@ -20,19 +18,19 @@ public class Test {
         mongoConnection.setConnectionInfo();
         DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("MongoDBManagement");
 
-        dbManagement.deleteAllFromDBTable();
+        dbManagement.deleteAllFromDBTable("Peoplelist");
 
-        dbManagement.insertToDBTable("Vasya","Pupkin","pupok@deneg.net","0932745446");
-        dbManagement.insertToDBTable("Dasha","Puteshestvennica","gogo@gmail.com","0967774488");
-        dbManagement.insertToDBTable("Bill","Gates","billy@dengi.est","0997777777");
+        dbManagement.insertToDBTable("Peoplelist","Vasya","Pupkin","pupok@deneg.net","0932745446");
+        dbManagement.insertToDBTable("Peoplelist","Dasha","Puteshestvennica","gogo@gmail.com","0967774488");
+        dbManagement.insertToDBTable("Peoplelist","Bill","Gates","billy@dengi.est","0997777777");
 
-        dbManagement.selectAllFromDBTable();
+        dbManagement.selectAllFromDBTable("Peoplelist");
 
-        dbManagement.deleteFromDBTableForName("Vasya");
+        dbManagement.deleteFromDBTableForName("Peoplelist","Vasya");
 
-        dbManagement.selectAllFromDBTable();
+        dbManagement.selectAllFromDBTable("Peoplelist");
 
-        dbManagement.selectFromDBTableForName("Dasha");
+        dbManagement.selectFromDBTableForName("Peoplelist","Dasha");
 
 
     }
