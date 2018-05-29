@@ -2,15 +2,17 @@ package contactlist.management;
 
 import contactlist.connections.MongoConnection;
 import com.mongodb.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class MongoDBManagement implements DBManagement {
 
-    MongoConnection mongoConnection;
-    Mongo mongo;
-    DB dataBase;
+    private MongoConnection mongoConnection;
+    private Mongo mongo;
+    private DB dataBase;
 
     private MongoDBManagement() {}
 
+    @Autowired
     public MongoDBManagement (MongoConnection mongoConnection) {
         this.mongoConnection = mongoConnection;
     }

@@ -2,6 +2,7 @@ package contactlist.connections;
 
 import java.util.Properties;
 import com.mongodb.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class MongoConnection {
 
@@ -10,10 +11,11 @@ public class MongoConnection {
     /**
      * ContactList configuration from properties
      */
+    @Autowired
     private Properties configuration;
 
     /**
-     * info for Mongo database on localhost
+     * info for connection to Mongo database
      */
     private String host;
     private int port;

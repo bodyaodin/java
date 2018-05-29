@@ -1,15 +1,26 @@
 package contactlist.management;
 
 import contactlist.connections.PostgreSQLConnection;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import java.sql.*;
 
 public class PostgreSQLDBManagement implements DBManagement {
 
-    PostgreSQLConnection postgreSQLConnection;
-    Connection connection;
+    private PostgreSQLConnection postgreSQLConnection;
+    private Connection connection;
+
+    /**
+     * Spring jdbcTemplate for works with PostgreSQL Data base queries
+     */
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     private PostgreSQLDBManagement() {}
 
+    @Autowired
     public PostgreSQLDBManagement(PostgreSQLConnection postgreSQLConnection) {
         this.postgreSQLConnection = postgreSQLConnection;
     }
@@ -21,6 +32,16 @@ public class PostgreSQLDBManagement implements DBManagement {
     public void deleteAllFromDBTable(String tableName) {
         String deleteQuery = "DELETE FROM " + tableName.toUpperCase();
 
+        try {
+            int deletedLines = jdbcTemplate.update(deleteQuery);
+
+            System.out.println("Count of deleted lines - " + deletedLines + "!");
+            System.out.println();
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+
+        /*
         try {
             try{
                 connection = postgreSQLConnection.getConnectionToDB();
@@ -37,6 +58,7 @@ public class PostgreSQLDBManagement implements DBManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
     }
 
     /**

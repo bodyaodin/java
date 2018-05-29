@@ -1,10 +1,10 @@
 package contactlist.connections;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
-
 
 public class PostgreSQLConnection {
 
@@ -13,6 +13,7 @@ public class PostgreSQLConnection {
     /**
      * ContactList configuration from properties
      */
+    @Autowired
     private Properties configuration;
 
     /**

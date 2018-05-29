@@ -18,6 +18,7 @@ public class Test {
 //        mongoConnection.setConnectionInfo();
 //        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("MongoDBManagement");
 
+        //----- Testing of Data Bases ----------------------------------------------------------------------------------
         dbManagement.deleteAllFromDBTable("Peoplelist");
 
         dbManagement.insertToDBTable("Peoplelist","Vasya","Pupkin","pupok@deneg.net","0932745446");
@@ -31,6 +32,7 @@ public class Test {
         dbManagement.selectAllFromDBTable("Peoplelist");
 
         dbManagement.selectFromDBTableForName("Peoplelist","Dasha");
+        //--------------------------------------------------------------------------------------------------------------
 
         abstractApplicationContext.close();
 

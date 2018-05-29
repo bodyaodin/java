@@ -5,6 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringContext {
 
+    /**
+     * name of Spring xml configuration file
+     */
     private static String configName = "SpringConfig.xml";
     private static AbstractApplicationContext abstractApplicationContext;
 
