@@ -4,6 +4,9 @@ import java.util.Properties;
 import com.mongodb.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * This class is used for connection to Mongo DB
+ */
 public class MongoConnection {
 
     private static MongoConnection instance;
@@ -11,7 +14,6 @@ public class MongoConnection {
     /**
      * ContactList configuration from properties
      */
-    @Autowired
     private Properties configuration;
 
     /**
@@ -27,6 +29,7 @@ public class MongoConnection {
         return dataBase;
     }
 
+    @Autowired
     public void setConfiguration(Properties configuration) {
         this.configuration = configuration;
     }

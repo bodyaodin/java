@@ -4,6 +4,9 @@ import contactlist.connections.MongoConnection;
 import com.mongodb.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * This class is used for inserting, updating and selecting data from Mongo DB
+ */
 public class MongoDBManagement implements DBManagement {
 
     private MongoConnection mongoConnection;
@@ -15,6 +18,30 @@ public class MongoDBManagement implements DBManagement {
     @Autowired
     public MongoDBManagement (MongoConnection mongoConnection) {
         this.mongoConnection = mongoConnection;
+    }
+
+    /**
+     * method for inserting data to DB collection
+     */
+    @Override
+    public void insertToDBTable(String tableName, String firstName, String lastName, String email, String phone) {
+        try {
+            mongo = mongoConnection.getConnectionToDB();
+            dataBase = mongo.getDB(mongoConnection.getDataBase());
+            DBCollection dbCollection = dataBase.getCollection(tableName);
+
+            BasicDBObject insertDoc = new BasicDBObject();
+            insertDoc.put("FIRST_NAME", firstName);
+            insertDoc.put("LAST_NAME", lastName);
+            insertDoc.put("EMAIL", email);
+            insertDoc.put("PHONE", phone);
+            dbCollection.insert(insertDoc);
+
+            System.out.printf("%s %s was added to %s!%n", firstName, lastName, tableName);
+            System.out.println();
+        } finally {
+            mongo.close();
+        }
     }
 
     /**
@@ -52,30 +79,6 @@ public class MongoDBManagement implements DBManagement {
             dbCollection.remove(deleteDoc);
 
             System.out.println("Document with name " + firstName + " was deleted from " + tableName + "!");
-            System.out.println();
-        } finally {
-            mongo.close();
-        }
-    }
-
-    /**
-     * method for inserting data to DB collection
-     */
-    @Override
-    public void insertToDBTable(String tableName, String firstName, String lastName, String email, String phone) {
-        try {
-            mongo = mongoConnection.getConnectionToDB();
-            dataBase = mongo.getDB(mongoConnection.getDataBase());
-            DBCollection dbCollection = dataBase.getCollection(tableName);
-
-            BasicDBObject insertDoc = new BasicDBObject();
-            insertDoc.put("FIRST_NAME", firstName);
-            insertDoc.put("LAST_NAME", lastName);
-            insertDoc.put("EMAIL", email);
-            insertDoc.put("PHONE", phone);
-            dbCollection.insert(insertDoc);
-
-            System.out.printf("%s %s was added to %s!%n", firstName, lastName, tableName);
             System.out.println();
         } finally {
             mongo.close();

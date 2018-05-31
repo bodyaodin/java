@@ -6,6 +6,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * For now connection to PostgreSQL DB is executing through Spring JDBC configuration.
+ * This class is alternative option for connection to DB without Spring.
+ */
 public class PostgreSQLConnection {
 
     private static PostgreSQLConnection instance;
@@ -13,7 +17,6 @@ public class PostgreSQLConnection {
     /**
      * ContactList configuration from properties
      */
-    @Autowired
     private Properties configuration;
 
     /**
@@ -23,6 +26,7 @@ public class PostgreSQLConnection {
     private String login;
     private String password;
 
+    @Autowired
     public void setConfiguration(Properties configuration) {
         this.configuration = configuration;
     }

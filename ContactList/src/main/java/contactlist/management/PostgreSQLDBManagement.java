@@ -4,25 +4,76 @@ import contactlist.connections.PostgreSQLConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.*;
+import java.util.Iterator;
+import java.util.List;
 
+/**
+ * This class is used for inserting, updating and selecting data from PostgreSQL DB
+ */
 public class PostgreSQLDBManagement implements DBManagement {
 
-    private PostgreSQLConnection postgreSQLConnection;
-    private Connection connection;
+//    private PostgreSQLConnection postgreSQLConnection;
+//    private Connection connection;
 
     /**
      * Spring jdbcTemplate for works with PostgreSQL Data base queries
      */
-    @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    private PostgreSQLDBManagement() {}
-
     @Autowired
-    public PostgreSQLDBManagement(PostgreSQLConnection postgreSQLConnection) {
-        this.postgreSQLConnection = postgreSQLConnection;
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public PostgreSQLDBManagement() {
+    }
+
+//    @Autowired
+//    public PostgreSQLDBManagement(PostgreSQLConnection postgreSQLConnection) {
+//        this.postgreSQLConnection = postgreSQLConnection;
+//    }
+
+    /**
+     * method for inserting data to DB table
+     */
+    @Override
+    public void insertToDBTable(String tableName, String firstName, String lastName, String email, String phone) {
+        String updateQuery = "INSERT INTO " + tableName.toUpperCase() + " (FIRST_NAME, LAST_NAME, EMAIL, PHONE) VALUES (?, ?, ?, ?)";
+
+        try {
+            jdbcTemplate.update(updateQuery, firstName, lastName, email, phone);
+
+            System.out.printf("%s %s was added to %s!%n", firstName, lastName, tableName);
+            System.out.println();
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+
+        /*
+        try {
+            try {
+                connection = postgreSQLConnection.getConnectionToDB();
+
+                PreparedStatement statement = connection.prepareStatement(updateQuery);
+                statement.setString(1, firstName);
+                statement.setString(2, lastName);
+                statement.setString(3, email);
+                statement.setString(4, phone);
+                statement.executeUpdate();
+                statement.close();
+
+                System.out.printf("%s %s was added to %s!%n", firstName, lastName, tableName);
+                System.out.println();
+            } finally {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        */
     }
 
     /**
@@ -69,6 +120,16 @@ public class PostgreSQLDBManagement implements DBManagement {
         String deleteQuery = "DELETE FROM " + tableName.toUpperCase() + " WHERE FIRST_NAME = '" + firstName + "'";
 
         try {
+            int deletedLines = jdbcTemplate.update(deleteQuery);
+
+            System.out.println("Count of deleted lines - " + deletedLines + "!");
+            System.out.println();
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+
+        /*
+        try {
             try{
                 connection = postgreSQLConnection.getConnectionToDB();
 
@@ -84,36 +145,9 @@ public class PostgreSQLDBManagement implements DBManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
     }
 
-    /**
-     * method for inserting data to DB table
-     */
-    @Override
-    public void insertToDBTable(String tableName, String firstName, String lastName, String email, String phone) {
-        String updateQuery = "INSERT INTO " + tableName.toUpperCase() + " (FIRST_NAME, LAST_NAME, EMAIL, PHONE) VALUES (?, ?, ?, ?)";
-
-        try {
-            try{
-                connection = postgreSQLConnection.getConnectionToDB();
-
-                PreparedStatement statement = connection.prepareStatement(updateQuery);
-                statement.setString(1, firstName);
-                statement.setString(2, lastName);
-                statement.setString(3, email);
-                statement.setString(4, phone);
-                statement.executeUpdate();
-                statement.close();
-
-                System.out.printf("%s %s was added to %s!%n", firstName, lastName, tableName);
-                System.out.println();
-            } finally {
-                connection.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * method for selecting all data from DB table
@@ -123,7 +157,27 @@ public class PostgreSQLDBManagement implements DBManagement {
         String selectQuery = "SELECT * FROM " + tableName.toUpperCase();
 
         try {
-            try{
+            List<String> rowsFromTable = jdbcTemplate.query(selectQuery, new RowMapper<String>() {
+                @Override
+                public String mapRow(ResultSet resultSet, int i) throws SQLException {
+                    String resultLine = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME")
+                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE") + " !";
+                    return resultLine;
+                }
+            });
+
+            int i = 1; //counter of people
+            for (Iterator<String> iterator = rowsFromTable.iterator(); iterator.hasNext(); ) {
+                System.out.printf("Person #%d: %s%n", i++, iterator.next());
+            }
+            System.out.println();
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+
+        /*
+        try {
+            try {
                 connection = postgreSQLConnection.getConnectionToDB();
 
                 Statement statement = connection.createStatement();
@@ -145,6 +199,7 @@ public class PostgreSQLDBManagement implements DBManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
     }
 
     /**
@@ -155,7 +210,27 @@ public class PostgreSQLDBManagement implements DBManagement {
         String selectQuery = "SELECT * FROM " + tableName.toUpperCase() + " WHERE FIRST_NAME = '" + firstName + "'";
 
         try {
-            try{
+            List<String> rowsFromTable = jdbcTemplate.query(selectQuery, new RowMapper<String>() {
+                @Override
+                public String mapRow(ResultSet resultSet, int i) throws SQLException {
+                    String resultLine = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME")
+                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE") + " !";
+                    return resultLine;
+                }
+            });
+
+            int i = 1; //counter of people
+            for (Iterator<String> iterator = rowsFromTable.iterator(); iterator.hasNext(); ) {
+                System.out.printf("Person #%d: %s%n", i++, iterator.next());
+            }
+            System.out.println();
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+
+        /*
+        try {
+            try {
                 connection = postgreSQLConnection.getConnectionToDB();
 
                 Statement statement = connection.createStatement();
@@ -177,6 +252,7 @@ public class PostgreSQLDBManagement implements DBManagement {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
     }
 
 }
