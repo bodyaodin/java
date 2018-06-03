@@ -8,7 +8,7 @@ import java.util.Properties;
 
 /**
  * For now connection to PostgreSQL DB is executing through Spring JDBC configuration.
- * This class is alternative option for connection to DB without Spring.
+ * This class is alternative option for connection to PostgreSQL DB without Spring.
  */
 public class PostgreSQLConnection {
 

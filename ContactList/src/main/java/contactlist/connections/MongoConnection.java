@@ -5,7 +5,8 @@ import com.mongodb.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * This class is used for connection to Mongo DB
+ * For now connection to Mongo DB is executing through Spring Mongo configuration.
+ * This class is alternative option for connection to Mongo DB without Spring.
  */
 public class MongoConnection {
 

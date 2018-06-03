@@ -4,74 +4,66 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/util
-       http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+       http://www.springframework.org/schema/util/spring-util-3.2.xsd
+       http://www.springframework.org/schema/data/mongo
+       http://www.springframework.org/schema/data/mongo/spring-mongo-2.0.xsd
+       ">
 
+    <!-- Include context annotations like @Component, @Service, @Controller, @Repository... -->
     <context:annotation-config/>
 
     <!-- Scanning packages for Spring annotations -->
-    <!--<context:component-scan base-package="contactlist"/>-->
+    <context:component-scan base-package="contactlist.*">
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    </context:component-scan>
+
 
     <!-- Connections to DB -->
-    <bean id="MongoConnection" class="contactlist.connections.MongoConnection" factory-method="getInstance">
-        <!--<property name="configuration">-->
-            <!--<props>-->
-                <!--<prop key="mongo.host">${mongo.host}</prop>-->
-                <!--<prop key="mongo.port">${mongo.port}</prop>-->
-                <!--<prop key="mongo.dataBase">${mongo.dataBase}</prop>-->
-                <!--<prop key="mongo.login">${mongo.login}</prop>-->
-                <!--<prop key="mongo.password">${mongo.password}</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    </bean>
-    <bean id="PostgreSQLConnection" class="contactlist.connections.PostgreSQLConnection" factory-method="getInstance">
-        <!--<property name="configuration">-->
-            <!--<props>-->
-                <!--<prop key="postgreSQL.url">${postgreSQL.url}</prop>-->
-                <!--<prop key="postgreSQL.login">${postgreSQL.login}</prop>-->
-                <!--<prop key="postgreSQL.password">${postgreSQL.password}</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    </bean>
+    <!--<bean id="MongoConnection" class="contactlist.connections.MongoConnection" factory-method="getInstance"/>-->
+    <!--<bean id="PostgreSQLConnection" class="contactlist.connections.PostgreSQLConnection" factory-method="getInstance"/>-->
+
+    <!-- Person class -->
+    <bean id="Person" class="contactlist.contacts.Person" scope="prototype"/>
 
     <!-- DB Managements -->
     <bean id="MongoDBManagement" class="contactlist.management.MongoDBManagement">
-        <!--<constructor-arg ref="MongoConnection"/>-->
+        <property name="collectionName" value="${mongo.collection}"/>
     </bean>
     <bean id="PostgreSQLDBManagement" class="contactlist.management.PostgreSQLDBManagement">
-        <!--<constructor-arg ref="PostgreSQLConnection"/>-->
+        <property name="tableName" value="${postgreSQL.table}"/>
     </bean>
+
 
     <!-- Properties configuration files -->
     <util:properties id="configuration" location="classpath:ContactListConfig.properties"/>
 
     <!-- Properties configuration files scanner -->
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath:ContactListConfig.properties</value>
-            </list>
-        </property>
-        <property name="ignoreResourceNotFound" value="true" />
-        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
-    </bean>
+    <context:property-placeholder location="classpath:ContactListConfig.properties"/>
+
 
     <!-- Spring JDBC configuration for connection to DB -->
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <constructor-arg ref="dataSource"/>
-    </bean>
-
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${postgreSQL.driver}"/>
         <property name="url" value="${postgreSQL.url}"/>
         <property name="username" value="${postgreSQL.login}"/>
         <property name="password" value="${postgreSQL.password}"/>
     </bean>
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
 
+    <!-- Spring Mongo configuration for connection to DB -->
+    <mongo:mongo-client id="mongo" host="${mongo.host}" port="${mongo.port}"/>
+    <mongo:db-factory id="mongoDbFactory" dbname="${mongo.dataBase}" mongo-ref="mongo"/>
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+    </bean>
 
 </beans>

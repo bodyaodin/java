@@ -2,6 +2,7 @@ package contactlist;
 
 import contactlist.connections.MongoConnection;
 import contactlist.connections.PostgreSQLConnection;
+import contactlist.contacts.Person;
 import contactlist.management.DBManagement;
 import org.springframework.context.support.AbstractApplicationContext;
 
@@ -10,28 +11,44 @@ public class Test {
     public static void main(String[] args) {
         AbstractApplicationContext abstractApplicationContext = SpringContext.getAbstractApplicationContext();
 
-        PostgreSQLConnection psConnection = (PostgreSQLConnection) abstractApplicationContext.getBean("PostgreSQLConnection");
-        psConnection.setConnectionInfo();
-        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("PostgreSQLDBManagement");
+        //----- Inserting peoples --------------------------------------------------------------------------------------
 
-//        MongoConnection mongoConnection = (MongoConnection) abstractApplicationContext.getBean("MongoConnection");
-//        mongoConnection.setConnectionInfo();
-//        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("MongoDBManagement");
+        Person person1 = (Person) abstractApplicationContext.getBean("Person");
+        person1.setFIRST_NAME("Vasya");
+        person1.setLAST_NAME("Pupkin");
+        person1.setEMAIL("pupok@deneg.net");
+        person1.setPHONE("0932745446");
+        Person person2 = (Person) abstractApplicationContext.getBean("Person");
+        person2.setFIRST_NAME("Dasha");
+        person2.setLAST_NAME("Puteshestvennica");
+        person2.setEMAIL("gogo@gmail.com");
+        person2.setPHONE("0967774488");
+        Person person3 = (Person) abstractApplicationContext.getBean("Person");
+        person3.setFIRST_NAME("Bill");
+        person3.setLAST_NAME("Gates");
+        person3.setEMAIL("billy@dengi.est");
+        person3.setPHONE("0997777777");
+
+        //----- Creating Managements -----------------------------------------------------------------------------------
+
+//        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("PostgreSQLDBManagement");
+        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("MongoDBManagement");
 
         //----- Testing of Data Bases ----------------------------------------------------------------------------------
-        dbManagement.deleteAllFromDBTable("Peoplelist");
 
-        dbManagement.insertToDBTable("Peoplelist","Vasya","Pupkin","pupok@deneg.net","0932745446");
-        dbManagement.insertToDBTable("Peoplelist","Dasha","Puteshestvennica","gogo@gmail.com","0967774488");
-        dbManagement.insertToDBTable("Peoplelist","Bill","Gates","billy@dengi.est","0997777777");
+        dbManagement.deleteAllFromDBTable();
 
-        dbManagement.selectAllFromDBTable("Peoplelist");
+        dbManagement.insertToDBTable(person1);
+        dbManagement.insertToDBTable(person2);
+        dbManagement.insertToDBTable(person3);
 
-        dbManagement.deleteFromDBTableForName("Peoplelist","Vasya");
+        dbManagement.selectAllFromDBTable();
 
-        dbManagement.selectAllFromDBTable("Peoplelist");
+        dbManagement.deleteFromDBTableForName(person1);
 
-        dbManagement.selectFromDBTableForName("Peoplelist","Dasha");
+        dbManagement.selectAllFromDBTable();
+
+        dbManagement.selectFromDBTableForName(person2);
         //--------------------------------------------------------------------------------------------------------------
 
         abstractApplicationContext.close();

@@ -1,17 +1,19 @@
 package contactlist.management;
 
+import contactlist.contacts.Person;
+
 /**
  * Interface for management for data bases
  */
 public interface DBManagement {
 
-    public void insertToDBTable(String tableName, String firstName, String lastName, String email, String phone);
+    public void insertToDBTable(Person person);
 
-    public void deleteAllFromDBTable(String tableName);
+    public void deleteAllFromDBTable();
 
-    public void deleteFromDBTableForName(String tableName, String firstName);
+    public void deleteFromDBTableForName(Person person);
 
-    public void selectAllFromDBTable(String tableName);
+    public void selectAllFromDBTable();
 
-    public void selectFromDBTableForName(String tableName, String firstName);
+    public void selectFromDBTableForName(Person person);
 }

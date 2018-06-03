@@ -1,6 +1,7 @@
 package contactlist.management;
 
 import contactlist.connections.PostgreSQLConnection;
+import contactlist.contacts.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,30 +24,41 @@ public class PostgreSQLDBManagement implements DBManagement {
      */
     private JdbcTemplate jdbcTemplate;
 
+    /**
+     * Field for Table name from Contact List
+     */
+    private String tableName;
+
+
     @Autowired
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public PostgreSQLDBManagement() {
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
     }
+
+
+    public PostgreSQLDBManagement() {}
 
 //    @Autowired
 //    public PostgreSQLDBManagement(PostgreSQLConnection postgreSQLConnection) {
 //        this.postgreSQLConnection = postgreSQLConnection;
 //    }
 
+
     /**
      * method for inserting data to DB table
      */
     @Override
-    public void insertToDBTable(String tableName, String firstName, String lastName, String email, String phone) {
-        String updateQuery = "INSERT INTO " + tableName.toUpperCase() + " (FIRST_NAME, LAST_NAME, EMAIL, PHONE) VALUES (?, ?, ?, ?)";
+    public void insertToDBTable(Person person) {
+        String updateQuery = "INSERT INTO " + this.tableName.toUpperCase() + " (FIRST_NAME, LAST_NAME, EMAIL, PHONE) VALUES (?, ?, ?, ?)";
 
         try {
-            jdbcTemplate.update(updateQuery, firstName, lastName, email, phone);
+            jdbcTemplate.update(updateQuery, person.getFIRST_NAME(), person.getLAST_NAME(), person.getEMAIL(), person.getPHONE());
 
-            System.out.printf("%s %s was added to %s!%n", firstName, lastName, tableName);
+            System.out.printf("%s %s was added to %s!%n", person.getFIRST_NAME(), person.getLAST_NAME(), this.tableName);
             System.out.println();
         } catch (DataAccessException e) {
             e.printStackTrace();
@@ -80,13 +92,13 @@ public class PostgreSQLDBManagement implements DBManagement {
      * method for deleting all data from DB table
      */
     @Override
-    public void deleteAllFromDBTable(String tableName) {
-        String deleteQuery = "DELETE FROM " + tableName.toUpperCase();
+    public void deleteAllFromDBTable() {
+        String deleteQuery = "DELETE FROM " + this.tableName.toUpperCase();
 
         try {
             int deletedLines = jdbcTemplate.update(deleteQuery);
 
-            System.out.println("Count of deleted lines - " + deletedLines + "!");
+            System.out.println("All data was deleted! Count of deleted lines - " + deletedLines + "!");
             System.out.println();
         } catch (DataAccessException e) {
             e.printStackTrace();
@@ -116,13 +128,13 @@ public class PostgreSQLDBManagement implements DBManagement {
      * method for deleting some data from DB table where name is ...
      */
     @Override
-    public void deleteFromDBTableForName(String tableName, String firstName) {
-        String deleteQuery = "DELETE FROM " + tableName.toUpperCase() + " WHERE FIRST_NAME = '" + firstName + "'";
+    public void deleteFromDBTableForName(Person person) {
+        String deleteQuery = "DELETE FROM " + this.tableName.toUpperCase() + " WHERE FIRST_NAME = '" + person.getFIRST_NAME() + "'";
 
         try {
             int deletedLines = jdbcTemplate.update(deleteQuery);
 
-            System.out.println("Count of deleted lines - " + deletedLines + "!");
+            System.out.println("Records with name " + person.getFIRST_NAME() + " was deleted from " + this.tableName + "! Count of deleted lines - " + deletedLines + "!");
             System.out.println();
         } catch (DataAccessException e) {
             e.printStackTrace();
@@ -153,15 +165,15 @@ public class PostgreSQLDBManagement implements DBManagement {
      * method for selecting all data from DB table
      */
     @Override
-    public void selectAllFromDBTable(String tableName) {
-        String selectQuery = "SELECT * FROM " + tableName.toUpperCase();
+    public void selectAllFromDBTable() {
+        String selectQuery = "SELECT * FROM " + this.tableName.toUpperCase();
 
         try {
             List<String> rowsFromTable = jdbcTemplate.query(selectQuery, new RowMapper<String>() {
                 @Override
                 public String mapRow(ResultSet resultSet, int i) throws SQLException {
                     String resultLine = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME")
-                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE") + " !";
+                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE");
                     return resultLine;
                 }
             });
@@ -206,15 +218,15 @@ public class PostgreSQLDBManagement implements DBManagement {
      * method for selecting some data from DB table where name is ...
      */
     @Override
-    public void selectFromDBTableForName(String tableName, String firstName) {
-        String selectQuery = "SELECT * FROM " + tableName.toUpperCase() + " WHERE FIRST_NAME = '" + firstName + "'";
+    public void selectFromDBTableForName(Person person) {
+        String selectQuery = "SELECT * FROM " + this.tableName.toUpperCase() + " WHERE FIRST_NAME = '" + person.getFIRST_NAME() + "'";
 
         try {
             List<String> rowsFromTable = jdbcTemplate.query(selectQuery, new RowMapper<String>() {
                 @Override
                 public String mapRow(ResultSet resultSet, int i) throws SQLException {
                     String resultLine = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME")
-                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE") + " !";
+                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE");
                     return resultLine;
                 }
             });
