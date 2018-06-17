@@ -16,4 +16,6 @@ public interface DBManagement {
     public void selectAllFromDBTable();
 
     public void selectFromDBTableForName(Person person);
+
+    public void updateRecordInDBTable(Person oldPerson, Person newPerson);
 }

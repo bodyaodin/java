@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+
+    <class name="contactlist.contacts.Person" table="Peoplelist">
+        <id name="id" column="contact_id">
+            <generator class="identity"/>
+        </id>
+        <property name="FIRST_NAME" column="FIRST_NAME" type="string"/>
+        <property name="LAST_NAME" column="LAST_NAME" type="string"/>
+        <property name="EMAIL" column="EMAIL" type="string"/>
+        <property name="PHONE" column="PHONE" type="string"/>
+    </class>
+</hibernate-mapping>

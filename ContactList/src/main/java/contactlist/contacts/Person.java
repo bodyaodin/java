@@ -3,6 +3,8 @@ package contactlist.contacts;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigInteger;
+
 /**
  * This class is containing information about person from Contact List
  */
@@ -13,18 +15,18 @@ public class Person {
      * Fields with info about person
      */
     @Id
-    private String id;
+    private BigInteger id;
     private String FIRST_NAME;
     private String LAST_NAME;
     private String EMAIL;
     private String PHONE;
 
 
-    public String getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 
@@ -63,7 +65,7 @@ public class Person {
 
     public Person(){}
 
-    public Person(String id, String FIRST_NAME, String LAST_NAME, String EMAIL, String PHONE) {
+    public Person(BigInteger id, String FIRST_NAME, String LAST_NAME, String EMAIL, String PHONE) {
         this.id = id;
         this.FIRST_NAME = FIRST_NAME;
         this.LAST_NAME = LAST_NAME;

@@ -2,6 +2,10 @@ package contactlist.management;
 
 import contactlist.connections.PostgreSQLConnection;
 import contactlist.contacts.Person;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,7 +26,12 @@ public class PostgreSQLDBManagement implements DBManagement {
     /**
      * Spring jdbcTemplate for works with PostgreSQL Data base queries
      */
-    private JdbcTemplate jdbcTemplate;
+//    private JdbcTemplate jdbcTemplate;
+
+    /**
+     * Spring sessionFactory for works with PostgreSQL DB via Hibernate
+     */
+    private SessionFactory sessionFactory;
 
     /**
      * Field for Table name from Contact List
@@ -30,9 +39,14 @@ public class PostgreSQLDBManagement implements DBManagement {
     private String tableName;
 
 
+//    @Autowired
+//    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+//        this.jdbcTemplate = jdbcTemplate;
+//    }
+
     @Autowired
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
     public void setTableName(String tableName) {
@@ -53,6 +67,22 @@ public class PostgreSQLDBManagement implements DBManagement {
      */
     @Override
     public void insertToDBTable(Person person) {
+        try (final Session session = sessionFactory.openSession()) {
+            try {
+                session.beginTransaction();
+                session.save(person);
+                session.getTransaction().commit();
+            } finally {
+                session.close();
+            }
+
+            System.out.printf("%s %s was added to %s!%n", person.getFIRST_NAME(), person.getLAST_NAME(), this.tableName);
+            System.out.println();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+
+        /*
         String updateQuery = "INSERT INTO " + this.tableName.toUpperCase() + " (FIRST_NAME, LAST_NAME, EMAIL, PHONE) VALUES (?, ?, ?, ?)";
 
         try {
@@ -63,6 +93,7 @@ public class PostgreSQLDBManagement implements DBManagement {
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
+        */
 
         /*
         try {
@@ -93,6 +124,24 @@ public class PostgreSQLDBManagement implements DBManagement {
      */
     @Override
     public void deleteAllFromDBTable() {
+        String deleteQuery = "DELETE FROM " + Person.class.getSimpleName();
+
+        try (final Session session = sessionFactory.openSession()) {
+            try {
+                session.beginTransaction();
+                session.createQuery(deleteQuery).executeUpdate();
+                session.getTransaction().commit();
+            } finally {
+                session.close();
+            }
+
+            System.out.println("All data was deleted from " + this.tableName + "!");
+            System.out.println();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+
+        /*
         String deleteQuery = "DELETE FROM " + this.tableName.toUpperCase();
 
         try {
@@ -103,6 +152,7 @@ public class PostgreSQLDBManagement implements DBManagement {
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
+        */
 
         /*
         try {
@@ -129,6 +179,22 @@ public class PostgreSQLDBManagement implements DBManagement {
      */
     @Override
     public void deleteFromDBTableForName(Person person) {
+        try (final Session session = sessionFactory.openSession()) {
+            try {
+                session.beginTransaction();
+                session.delete(person);
+                session.getTransaction().commit();
+            } finally {
+                session.close();
+            }
+
+            System.out.println("Records with name " + person.getFIRST_NAME() + " was deleted from " + this.tableName + "!");
+            System.out.println();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+
+        /*
         String deleteQuery = "DELETE FROM " + this.tableName.toUpperCase() + " WHERE FIRST_NAME = '" + person.getFIRST_NAME() + "'";
 
         try {
@@ -139,6 +205,7 @@ public class PostgreSQLDBManagement implements DBManagement {
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
+        */
 
         /*
         try {
@@ -166,6 +233,28 @@ public class PostgreSQLDBManagement implements DBManagement {
      */
     @Override
     public void selectAllFromDBTable() {
+        String selectQuery = "FROM " + Person.class.getSimpleName();
+
+        try (final Session session = sessionFactory.openSession()) {
+            try {
+                session.beginTransaction();
+
+                List<Person> peopleList = session.createQuery(selectQuery).list();
+                int i = 1; //counter of people
+                for (Iterator<Person> iterator = peopleList.iterator(); iterator.hasNext(); ) {
+                    System.out.printf("Person #%d: %s%n", i++, iterator.next());
+                }
+                System.out.println();
+
+                session.getTransaction().commit();
+            } finally {
+                session.close();
+            }
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+
+        /*
         String selectQuery = "SELECT * FROM " + this.tableName.toUpperCase();
 
         try {
@@ -186,6 +275,7 @@ public class PostgreSQLDBManagement implements DBManagement {
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
+        */
 
         /*
         try {
@@ -198,7 +288,7 @@ public class PostgreSQLDBManagement implements DBManagement {
                 int i = 1; //counter of people
                 while (resultSet.next()) {
                     String resultLine = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME")
-                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE") + " !";
+                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE");
                     System.out.printf("Person #%d: %s%n", i++, resultLine);
                 }
                 System.out.println();
@@ -219,6 +309,25 @@ public class PostgreSQLDBManagement implements DBManagement {
      */
     @Override
     public void selectFromDBTableForName(Person person) {
+        String selectQuery = "FROM " + Person.class.getSimpleName();
+
+        try (final Session session = sessionFactory.openSession()) {
+            try {
+                session.beginTransaction();
+                Person selectedPerson = (Person) session.get(Person.class, person.getId());
+                session.getTransaction().commit();
+
+                int i = 1; //counter of people
+                System.out.printf("Person #%d: %s%n", i++, selectedPerson);
+                System.out.println();
+            } finally {
+                session.close();
+            }
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+
+        /*
         String selectQuery = "SELECT * FROM " + this.tableName.toUpperCase() + " WHERE FIRST_NAME = '" + person.getFIRST_NAME() + "'";
 
         try {
@@ -239,6 +348,7 @@ public class PostgreSQLDBManagement implements DBManagement {
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
+        */
 
         /*
         try {
@@ -251,7 +361,7 @@ public class PostgreSQLDBManagement implements DBManagement {
                 int i = 1; //counter of people
                 while (resultSet.next()) {
                     String resultLine = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME")
-                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE") + " !";
+                            + " - " + resultSet.getString("EMAIL") + "; " + resultSet.getString("PHONE");
                     System.out.printf("Person #%d: %s%n", i++, resultLine);
                 }
                 System.out.println();
@@ -267,4 +377,26 @@ public class PostgreSQLDBManagement implements DBManagement {
         */
     }
 
+    @Override
+    public void updateRecordInDBTable(Person oldPerson, Person newPerson) {
+        try (final Session session = sessionFactory.openSession()) {
+            try {
+                session.beginTransaction();
+                Person selectedPerson = (Person) session.get(Person.class, oldPerson.getId());
+                selectedPerson.setFIRST_NAME(newPerson.getFIRST_NAME());
+                selectedPerson.setLAST_NAME(newPerson.getLAST_NAME());
+                selectedPerson.setEMAIL(newPerson.getEMAIL());
+                selectedPerson.setPHONE(newPerson.getPHONE());
+                session.update(selectedPerson);
+                session.getTransaction().commit();
+
+                System.out.printf("Record with name %s was updated!%n", selectedPerson.getFIRST_NAME());
+                System.out.println();
+            } finally {
+                session.close();
+            }
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+    }
 }

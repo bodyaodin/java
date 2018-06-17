@@ -28,11 +28,16 @@ public class Test {
         person3.setLAST_NAME("Gates");
         person3.setEMAIL("billy@dengi.est");
         person3.setPHONE("0997777777");
+        Person person4 = (Person) abstractApplicationContext.getBean("Person");
+        person4.setFIRST_NAME("Bill");
+        person4.setLAST_NAME("Gates");
+        person4.setEMAIL("billy@dengi.est");
+        person4.setPHONE("0999999999");
 
         //----- Creating Managements -----------------------------------------------------------------------------------
 
-//        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("PostgreSQLDBManagement");
-        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("MongoDBManagement");
+        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("PostgreSQLDBManagement");
+//        DBManagement dbManagement = (DBManagement) abstractApplicationContext.getBean("MongoDBManagement");
 
         //----- Testing of Data Bases ----------------------------------------------------------------------------------
 
@@ -49,6 +54,10 @@ public class Test {
         dbManagement.selectAllFromDBTable();
 
         dbManagement.selectFromDBTableForName(person2);
+
+        dbManagement.updateRecordInDBTable(person3, person4);
+
+        dbManagement.selectAllFromDBTable();
         //--------------------------------------------------------------------------------------------------------------
 
         abstractApplicationContext.close();
