@@ -1,7 +1,6 @@
 package figures;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
 public class Square extends Figure {
 

@@ -1,8 +1,10 @@
 package figures;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
+/**
+ * The rectangular triangle is taken as the basis
+ */
 public class Triangle extends Figure {
 
     private int catechismA;

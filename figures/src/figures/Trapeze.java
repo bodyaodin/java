@@ -1,8 +1,10 @@
 package figures;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
+/**
+ * The equilateral trapeze is taken as the basis
+ */
 public class Trapeze extends Figure {
 
     private int upperSide;
