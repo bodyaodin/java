@@ -42,7 +42,7 @@ public class PostgreSQLConnection {
      */
     public static PostgreSQLConnection getInstance() {
         if (instance == null) {
-            PostgreSQLConnection.instance = new PostgreSQLConnection();
+            instance = new PostgreSQLConnection();
         }
         return instance;
     }

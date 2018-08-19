@@ -42,11 +42,11 @@ public class MongoConnection {
     }
 
     /**
-     * @return instance of PostgreSQLConnection if it exists or create new one
+     * @return instance of MongoConnection if it exists or create new one
      */
     public static MongoConnection getInstance() {
         if (instance == null) {
-            MongoConnection.instance = new MongoConnection();
+            instance = new MongoConnection();
         }
         return instance;
     }

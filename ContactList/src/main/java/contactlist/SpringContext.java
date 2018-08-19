@@ -18,7 +18,7 @@ public class SpringContext {
      */
     public static AbstractApplicationContext getAbstractApplicationContext() {
         if (abstractApplicationContext == null) {
-            SpringContext.abstractApplicationContext = new ClassPathXmlApplicationContext(SpringContext.configName);
+            abstractApplicationContext = new ClassPathXmlApplicationContext(configName);
         }
         return abstractApplicationContext;
     }

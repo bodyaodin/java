@@ -7,15 +7,15 @@ import contactlist.contacts.Person;
  */
 public interface DBManagement {
 
-    public void insertToDBTable(Person person);
+    void insertToDBTable(Person person);
 
-    public void deleteAllFromDBTable();
+    void deleteAllFromDBTable();
 
-    public void deleteFromDBTableForName(Person person);
+    void deleteFromDBTableForName(Person person);
 
-    public void selectAllFromDBTable();
+    void selectAllFromDBTable();
 
-    public void selectFromDBTableForName(Person person);
+    void selectFromDBTableForName(Person person);
 
-    public void updateRecordInDBTable(Person oldPerson, Person newPerson);
+    void updateRecordInDBTable(Person oldPerson, Person newPerson);
 }
