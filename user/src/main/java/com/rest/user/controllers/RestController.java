@@ -5,9 +5,7 @@ import com.rest.user.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -16,6 +14,7 @@ import java.util.List;
 public class RestController {
 
     private final AppService appService;
+
 
     @Autowired
     public RestController(AppService appService) {
@@ -28,40 +27,56 @@ public class RestController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public String getIndex() {
-        return "/getUsers - Get all users from DB. /addUser - Add user to DB!";
+        return "/getUsers - Get all users from DB (GET). " +
+                "/getUser/{id} - Get user from DB using ID (GET). " +
+                "/addUser - Add user to DB (POST)! " +
+                "/deleteUser/{id} - Delete user from DB using ID (DELETE). " +
+                "/updateUser/{id} - Update old user in DB using ID (PUT).";
     }
 
     /**
-     * Return all users in database
+     * Return all users from database
      **/
     @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
     @ResponseBody
     public List<User> getUsers() {
-        return appService.getUser();
+        return appService.getUsers();
     }
 
     /**
-     * Return form for entering user information
-     */
-    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
-    @ResponseBody
-    public ModelAndView addUser() {
-        return new ModelAndView("putUser", "command", new User());
-    }
-
-    /**
-     * Put user in database
+     * Get user from DB using ID
      **/
-    @RequestMapping(value = "/postUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/getUser/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public String postUser(@ModelAttribute("dispatcher") User user, ModelMap model) {
-        model.addAttribute("id", user.getId());
-        model.addAttribute("username", user.getUsername());
-        model.addAttribute("firstname", user.getFirstName());
-        model.addAttribute("lastname", user.getLastName());
-
-        return "user";
+    public User getUserID(@PathVariable long id) {
+        return appService.getUserID(id);
     }
 
+    /**
+     * Add user to database
+     **/
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    @ResponseBody
+    public String postUser(@RequestBody User newUser) {
+        return appService.addUser(newUser);
+    }
 
+    /**
+     * Delete user from DB using ID
+     **/
+    @RequestMapping(value = "/deleteUser/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public String deleteUser(@PathVariable long id) {
+        appService.deleteUser(id);
+        return "User with id " + id + " was deleted from database!";
+    }
+
+    /**
+     * Update user in DB using ID
+     **/
+    @RequestMapping(value = "/updateUser/{id}", method = RequestMethod.PUT)
+    @ResponseBody
+    public String updateUser(@RequestBody User newUser, @PathVariable long id) {
+        return appService.updateUser(newUser, id);
+    }
 }

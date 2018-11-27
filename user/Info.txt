@@ -1,0 +1,20 @@
+Test task: create REST API that can add users to DB and get them from it.
+
+Написати Rest-сервіс який буде мати endpoint(API) ("api/user")
+
+Один на збереження об'єкту користувач
+
+Post запит
+{
+"username":"someUsername",
+"firstname":"firstname",
+"lastname":"lastname"
+}
+
+Get запит поверне список усіх створених userів.
+
+Усіх юзерів зберігати у базі данних.
+
+Стек технологій
+Spring boot(MVC, JPA)
+H2 у якості тестової бази данних (для того щоб не піднімати справжню)

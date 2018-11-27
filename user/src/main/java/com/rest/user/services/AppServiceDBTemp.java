@@ -1,7 +1,6 @@
 package com.rest.user.services;
 
 import com.rest.user.users.User;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ import java.util.List;
 public class AppServiceDBTemp implements AppService {
 
     @Override
-    public List<User> getUser() {
+    public List<User> getUsers() {
         List<User> users = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
@@ -32,7 +31,23 @@ public class AppServiceDBTemp implements AppService {
     }
 
     @Override
-    public void putUser() {
+    public User getUserID(long id) {
+        return null;
+    }
 
+    @Override
+    public String addUser(User user) {
+
+        return null;
+    }
+
+    @Override
+    public void deleteUser(long id) {
+
+    }
+
+    @Override
+    public String updateUser(User newUser, long id) {
+        return null;
     }
 }

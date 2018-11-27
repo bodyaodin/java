@@ -1,14 +1,16 @@
 package com.rest.user.users;
 
-import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-
+@Entity(name = "User")
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String username;
     private String firstName;
@@ -18,8 +20,7 @@ public class User {
     public User() {
     }
 
-    public User(long id, String username, String firstName, String lastName) {
-        this.id = id;
+    public User(String username, String firstName, String lastName) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
