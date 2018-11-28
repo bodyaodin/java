@@ -6,13 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ContactList" />
         <module name="contactlist" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="contactlist" target="1.7" />
-      <module name="ContactList" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
