@@ -1,0 +1,3 @@
+Training project.
+
+I created Contact List with access to PostgreSQL DB and to Mongo DB using Spring and Hibernate.
