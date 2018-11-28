@@ -1,0 +1,13 @@
+Test task about figures.
+
+It is necessary to describe the task using the principles of OOP.
+
+The condition of the test task:
+Given the figure objects of the following types: square, triangle, circle, trapezium.
+Each shape can be drawn, get its area and color.
+Also, the figures have unique methods, for example: return the radius, the length of the hypotenuse, the length of the side, etc.
+
+We need to generate a random set of shapes, the number of objects in the set is also not known in advance.
+After generating the array, you need to display the entire list of objects that we have, for example:
+Figure: square, area: 25 square meters. units, side length: 5 units, color: blue
+Figure: triangle, area: 12.5 square units, hypotenuse: 7.1 units, color: yellow

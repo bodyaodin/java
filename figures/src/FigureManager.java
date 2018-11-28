@@ -16,6 +16,7 @@ public class FigureManager {
         return figures;
     }
 
+
     public void setFigures(int amount) {
         for (int i = 0; i < amount; i++) {
             int random = (int) Math.round((Math.random() * 3) + 1);
