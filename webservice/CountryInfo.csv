@@ -1,0 +1,259 @@
+IsoCode;CountryName;Capital;PhoneCode;ContinentCode;CurrencyISOCode;Languages;CountryFlag
+;;;;;;;
+AF;Africa;;;;;;
+;;;;;;;
+AO;Angola;Luanda;244;AF;AOA;"Bantu (Other): bnt; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Angola.jpg
+BF;Burkina Faso;Ouagadougou;226;AF;XOF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Burkina.jpg
+BI;Burundi;Bujumbura;257;AF;BIF;"Kirundi: rn; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Burundi.jpg
+BJ;Benin;Porto-Novo;229;AF;XOF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Benin.jpg
+BW;Botswana;Gaborone;267;AF;BWP;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Botswana.jpg
+CD;Congo -  Democratic Republic;Kinshasha;243;AF;XAF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Congo.jpg
+CF;Central African Republic;Bangui;236;AF;XAF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Central.jpg
+CG;Congo;Brazzerville;242;AF;CDF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Congo.jpg
+CI;Côte D'Ivoire (Ivory Coast);Yamoussoukro;225;AF;XOF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Côte D'Ivoire.jpg
+CM;Cameroon;Yaounde;237;AF;XAF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Cameroon.jpg
+CV;Cape Verde;Cidade de Praia;238;AF;CVE;"Portuguese: por; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Cape_Verde.jpg
+DJ;Djibouti;Djibouti;253;AF;DJF;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Djibouti.jpg
+DZ;Algeria;Algiers;213;AF;DZD;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Algeria.jpg
+EG;Egypt;Cairo;20;AF;EGP;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Egypt.jpg
+EH;Western Sahara;Laâyoune;212;AF;AED;"Arabic: ara; Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Western_Sahara.jpg
+ER;Eritrea;Asmara;291;AF;ERN;"Tigrinya: tir; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Eritrea.jpg
+ET;Ethiopia;Addis Ababa;251;AF;ETB;"Amharic: amh; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Ethiopia.jpg
+GA;Gabon;Libreville;241;AF;XAF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Gabon.jpg
+GH;Ghana;Accra;233;AF;GHC;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Ghana.jpg
+GM;Gambia;Banjul;220;AF;GMD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Gambia.jpg
+GN;Guinea;Conakry;224;AF;GNF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Guinea.jpg
+GQ;Equatorial Guinea;Bata;240;AF;XAF;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Equatorial_Guinea.jpg
+GW;Guinea-Bissau;Bissau;225;AF;XOF;"Portuguese: por; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Guinea-B.jpg
+KE;Kenya;Nairobi;254;AF;KES;"Swahili: swa; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Kenya.jpg
+KM;Comoros;Moroni;269;AF;KMF;"Swahili: swa; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Comoros.jpg
+LR;Liberia;Monrovia;231;AF;LRD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Liberia.jpg
+LS;Lesotho;Masera;266;AF;LSL;"Sesotho: st; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Lesotho.jpg
+LY;Libyan Arab Jamahiriya;Tripoli;218;AF;LYD;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Libyan.jpg
+MA;Morocco;Rabat;212;AF;MAD;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Morocco.jpg
+MG;Madagascar;Antananarivo;261;AF;MGA;"Malagasy: mlg; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Madagascar.jpg
+ML;Mali;Bamako;223;AF;XOF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Mali.jpg
+MR;Mauritania;Novakchott;222;AF;MRO;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Mauritan.jpg
+MU;Mauritius;Port Louis;230;AF;MUR;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Mauritiu.jpg
+MW;Malawi;Lilongwe;265;AF;MWK;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Malawi.jpg
+MZ;Mozambique;Maputo;258;AF;MZM;"Portuguese: por; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Mozambiq.jpg
+NA;Namibia;Windhoek;264;AF;NAD;"Afrikaans: afr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Namibia.jpg
+NE;Niger;Niamey;227;AF;XOF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Niger.jpg
+NG;Nigeria;Abuja;234;AF;NGN;"English: eng; Hausa: hau; Igbo: ibo; Yoruba: yor; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Nigeria.jpg
+RE;Reunion;Saint-Denis;262;AF;EUR;"Creoles and Pidgins -  French-based (Other): cpf; French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Reunion.jpg
+RW;Rwanda;Kigali;250;AF;RWF;"Kinyarwanda: kin; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Rwanda.jpg
+SC;Seychelles;Victoria;248;AF;SCR;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Seychell.jpg
+SD;Sudan;Khartoum;249;AF;SDD;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Sudan.jpg
+SL;Sierra Leone;Freetown;232;AF;SLL;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Sierra_Leone.jpg
+SN;Senegal;Dakar;221;AF;XOF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Senegal.jpg
+SO;Somalia;Mogadishu;252;AF;SOS;"Somali: som; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Somalia.jpg
+ST;Sao Tome & Principe;Sao Tome;239;AF;STD;"Portuguese: por; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Sao_Tome.jpg
+SZ;Swaziland;Mbabane;269;AF;SZL;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Swazilan.jpg
+TD;Chad;N'Djamena;235;AF;XAF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Chad.jpg
+TG;Togo;Lome;228;AF;XOF;"Ewe: ewe; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Togo.jpg
+TN;Tunisia;Tunis;216;AF;TND;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Tunisia.jpg
+TZ;Tanzania;Dar es Salaam;255;AF;TZS;"Swahili: swa; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Tanzania.jpg
+UG;Uganda;Kampala;256;AF;UGX;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Uganda.jpg
+YT;Mayotte;Mamoudzou;269;AF;EUR;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Mayotte.jpg
+ZA;South Africa;Cape Town;27;AF;ZAR;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/South_Africa.jpg
+ZM;Zambia;Lusaka;260;AF;ZMK;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Zambia.jpg
+ZW;Zimbabwe;Harare;263;AF;ZWD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Zimbabwe.jpg
+;;;;;;;
+AN;Antarctica;;;;;;
+;;;;;;;
+AQ;Antarctica;None;0;AN;;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Antartica.jpg
+BV;Bouvet Island;None;578;AN;NOK;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Norway.jpg
+TF;French Southern Territories;-;0;AN;EUR;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/French_Southern_Territories.jpg
+;;;;;;;
+AS;Asia;;;;;;
+;;;;;;;
+AE;United Arab Emirates;Abu Dhabi;971;AS;AED;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/United_Arab_Emirates.jpg
+AF;Afghanistan;Kabul;93;AS;AFA;"Pushto: pus; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Afghanistan.jpg
+AM;Armenia;Yerevan;374;AS;AMD;"Armenian: hy; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Armenia.jpg
+AZ;Azerbaijan;Baku;994;AS;AZM;"Azerbaijani: aze; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Azerbaijan.jpg
+BD;Bangladesh;Dhaka;880;AS;BDT;"Bengali: ben; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Bangladesh.jpg
+BH;Bahrain;Manama;973;AS;BHD;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Bahrain.jpg
+BN;Brunei-Darussalam;Bandar Seri Begawan;673;AS;BND;"Malay: ms; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Brunei-Darussalam.jpg
+BT;Bhutan;Timphu;975;AS;BTN;"Dzongkha: dzo; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Bhutan.jpg
+CN;China;Beijing;86;AS;CNY;"Chinese: zh; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/China.jpg
+CY;Cyprus;Nicosia;357;AS;CYP;"Greek -  Modern (1453-): el; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Cyprus.jpg
+GE;Georgia;Tbilisi;995;AS;GEL;"Georgian: ka; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Georgia.jpg
+HK;Hong Kong;Hong Kong;852;AS;HKD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Hong_Kong.jpg
+ID;Indonesia;Jakarta;62;AS;IDR;"Indonesian: ind; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Indonesi.jpg
+IL;Israel;Jerusalem;972;AS;ILS;"Hebrew: heb; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Israel.jpg
+IN;India;New Delhi;91;AS;INR;"Hindi: hin; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/India.jpg
+IO;British Indian Ocean Territory;Diego Garcia;246;AS;GBP;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/British_Indian_Ocean_Territory.jpg
+IQ;Iraq;Baghdad;964;AS;IQD;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Iraq.jpg
+IR;Iran;Tehran;98;AS;IRR;"Persian: fa; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Iran.jpg
+JO;Jordan;Amman;962;AS;JOD;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Jordan.jpg
+JP;Japan;Tokyo;81;AS;JPY;"Japanese: jpn; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Japan.jpg
+KG;Kyrgyzstan;Bishkek;996;AS;KGS;"Kirghiz: kir; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Kyrgyzst.jpg
+KH;Cambodia;Phnom Penh;855;AS;KHR;"Khmer: khm; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Cambodia.jpg
+KP;North Korea;Pyongyang;850;AS;KPW;"Korean: kor; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/North_Korea.jpg
+KR;South Korea;Seoul;82;AS;KRW;"Korean: kor; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/South_Korea.jpg
+KW;Kuwait;Kuwait;965;AS;KWD;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Kuwait.jpg
+KZ;Kazakhstan;Almaty;7;AS;KZT;"Kazakh: kaz; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Kazakhst.jpg
+LA;Laos;Vientiane;856;AS;LAK;"Lao: lao; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Laos.jpg
+LB;Lebanon;Beirut;961;AS;LBP;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Lebanon.jpg
+LK;Sri Lanka;Colombo;94;AS;LKR;"Singhalese: sin; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Sri_Lanka.jpg
+MM;Myanmar (Burma);Rangoon;95;AS;MMK;"Burmese: my; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Myanmar.jpg
+MN;Mongolia;Ulan Bator;976;AS;MNT;"Mongolian: mon; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Mongolia.jpg
+MO;Macao;Macao;853;AS;MOP;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Macao.jpg
+MV;Maldives (Maladive Ilands);Male;960;AS;MVR;"Divehi: div; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Maldives.jpg
+MY;Malaysia;Kuala Lumpur;60;AS;MYR;"Malay: ms; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Malaysia.jpg
+NP;Nepal;Katmandu;977;AS;NPR;"Nepali: nep; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Nepal.jpg
+OM;Oman;Muscat;968;AS;OMR;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Oman.jpg
+PH;Philippines;Manila;63;AS;PHP;"Filipino: fil; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Philippi.jpg
+PK;Pakistan;Islamabad;92;AS;PKR;"Urdu: urd; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Pakistan.jpg
+PS;Palestinian Territory -  Occupied;East Jerusalem;970;AS;JMD;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Palestinian_Territory.jpg
+QA;Quatar;Doha;974;AS;QAR;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Quatar.jpg
+RU;Russian Federation;Moscow;7;AS;RUB;"Russian: rus; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Russian.jpg
+SA;Saudi Arabia;Riyadh;966;AS;SAR;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Saudia_Arabiajpg
+SG;Singapore;Singapore;65;AS;SGD;"Malay: ms; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Singapore.jpg
+SY;Syrian Arab Republic;Damascus;963;AS;SYP;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Syria.jpg
+TH;Thailand;Bangkok;66;AS;THB;"Thai: tha; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Thailand.jpg
+TJ;Tajikistan;Dushanbe;992;AS;RUB;"Tajik: tgk; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Tajikistan.jpg
+TL;Timor-Leste;Dili;670;AS;USD;"Portuguese: por; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Timor-Leste.jpg
+TM;Turkmenistan;Ashkhabad;993;AS;TMM;"Turkmen: tuk; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Turkmeni.jpg
+TR;Turkey;Ankara;90;AS;TRY;"Turkish: tur; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Turkey.jpg
+TW;Taiwan;Taipei;886;AS;TWD;"Chinese: zh; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Taiwan.jpg
+UZ;Uzbekistan;Tashkent;998;AS;UZS;"Uzbek: uzb; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Uzbekistan.jpg
+VN;Vietnam;Hanoi;84;AS;VND;"Vietnamese: vie; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Vietnam.jpg
+YE;Yemen;Sanaa;967;AS;YER;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Yemen.jpg
+;;;;;;;
+EU;Europe;;;;;;
+;;;;;;;
+AD;Andorra;Andorra La Ville;371;EU;EUR;"Catalan: cat; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Andorra.jpg
+AL;Albania;Tirana;355;EU;ALL;"Albanian: sq; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Albania.jpg
+AT;Austria;Vienna;43;EU;EUR;"German: de; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Austria.jpg
+AX;Åland Islands;Mariehamn;358;EU;EUR;"Swedish: sv; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Åland_Islands.jpg
+BA;Bosnia & Herzegovina;Sarajevo;387;EU;BAM;"Serbo-Croatian: scr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Bosnia_Herzegovina.jpg
+BE;Belgium;Brussels;32;EU;EUR;"Dutch: nl; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Belgium.jpg
+BG;Bulgaria;Sofia;359;EU;BGN;"Bulgarian: bul; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Bulgaria.jpg
+BY;Belarus;Minsk;375;EU;BYR;"Byelorussian: bel; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Belarus.jpg
+CH;Switzerland;Bern;41;EU;CHF;"German: de; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Switzerl.jpg
+CS;Serbia & Montenegro;Belgrade;381;EU;CSD;"Serbo-Croatian: scr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Serbia_Montenegro.jpg
+CZ;Czech Republic;Prague;420;EU;CZK;"Czech: cs; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Czech_Republic.jpg
+DE;Germany;Berlin;49;EU;EUR;"German: de; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Germany.jpg
+DK;Denmark;Copenhagen;45;EU;DKK;"Danish: dan; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Denmark.jpg
+EE;Estonia;Tallinn;372;EU;EEK;"Estonian: est; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Estonia.jpg
+ES;Spain;Madrid;34;EU;EUR;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Spain.jpg
+FI;Finland;Helsinki;358;EU;EUR;"Finnish: fin; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Finland.jpg
+FO;Faroe Islands;Torshavn;298;EU;DKK;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Faroe_Islands.jpg
+FR;France;Paris;33;EU;EUR;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/France.jpg
+GB;United Kingdom;London;44;EU;GBP;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/United_Kingdom.jpg
+GI;Gibraltar;Gibraltar;350;EU;GIP;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Gibraltar.jpg
+GL;Greenland;Nuuk;299;EU;DKK;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Greenland.jpg
+GR;Greece;Athens;30;EU;EUR;"Greek -  Modern (1453-): el; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Greece.jpg
+HR;Croatia;Zagreb;385;EU;HRK;"Serbo-Croatian: scr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Croatia.jpg
+HU;Hungary;Budapest;36;EU;HUF;"Hungarian: hun; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Hungary.jpg
+IE;Ireland;Dublin;353;EU;EUR;"Irish: ga; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Ireland.jpg
+IS;Iceland;Reykjavik;354;EU;ISK;"Icelandic: is; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Iceland.jpg
+IT;Italy;Rome;39;EU;EUR;"Italian: ita; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Italy.jpg
+LI;Liechtenstein;Vaduz;423;EU;CHF;"German: de; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Liechten.jpg
+LT;Lithuania;Vilnius;370;EU;LTL;"Lithuanian: lit; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Lithuania.jpg
+LU;Luxembourg;Luxembourg;352;EU;EUR;"Letzeburgesch: ltz; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Luxembourg.jpg
+LV;Latvia;Riga;371;EU;LVL;"Latvian: lav; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Latvia.jpg
+MC;Monaco;Monaco;377;EU;EUR;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Monaco.jpg
+MD;Moldova -  Republic of;Kishinev;373;EU;MDL;"Romanian: ro; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Moldova.jpg
+MK;Macedonia  (former YR);Skopje;389;EU;MKD;"Macedonian: mk; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Macedoni.jpg
+MT;Malta;Valetta;356;EU;MTL;"Maltese: mlt; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Malta.jpg
+NL;Netherlands;Amsterdam;31;EU;EUR;"Frisian: fry; Dutch: nl; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Netherlands.jpg
+NO;Norway;Oslo;47;EU;NOK;"Norwegian: nor; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Norway.jpg
+PL;Poland;Warsaw;48;EU;PLN;"Polish: pol; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Poland.jpg
+PT;Portugal;Lisbon;351;EU;EUR;"Portuguese: por; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Portugal.jpg
+RO;Romania;Bucharest;40;EU;RON;"Romanian: ro; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Romania.jpg
+SE;Sweden;Stockholm;46;EU;SEK;"Swedish: sv; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Sweden.jpg
+SI;Slovenia;Ljubljana;386;EU;SIT;"Slovak: sk; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Slovenia.jpg
+SJ;Svalbard And Jan Mayen;Svalbard And Jan Mayen;790;EU;NOK;"Norwegian: nor; Russian: rus; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Svalbard_And_Jan_Mayen.jpg
+SK;Slovakia;Bratislava;421;EU;SKK;"Slovak: sk; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Slovakia.jpg
+SM;San Marino;San Marino;378;EU;EUR;"Italian: ita; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/San_Marino.jpg
+UA;Ukraine;Kiev;380;EU;UAH;"Ukrainian: ukr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Ukraine.jpg
+VA;Vatican City;Vatican City;39;EU;EUR;"Italian: ita; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Vatican.jpg
+;;;;;;;
+OC;Ocenania;;;;;;
+;;;;;;;
+AS;American Samoa;Pago Pago;684;OC;USD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/American_Samoa.jpg
+AU;Australia;Canberra;61;OC;AUD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Australia.jpg
+CC;Cocos (Keeling) Islands;West Island;287;OC;AUD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Cocos_Keeling_Islands.jpg
+CK;Cook Islands;Avarua;682;OC;NZD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Cook_Islands.jpg
+CX;Chrismas Island;Flying Fish Cove;672;OC;AUD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Christmas_Island.jpg
+FJ;Fiji;Suva;679;OC;FJD;"Fijian: fij; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Fiji.jpg
+FM;Micronesia  (Federa States of);Kolonia;691;OC;USD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Micrones.jpg
+GU;Guam;Hagatna (Agana);671;OC;USD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Guam.jpg
+HM;Heard Island And McDonald Islands;-;0;OC;;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Heard_Island_And_McDonald_Islands.jpg
+KI;Kiribati;Tarawa;686;OC;AUD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Kiribati.jpg
+MH;Marshall Islands;Majuro;692;OC;USD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Marshall.jpg
+MP;Northern Mariana Islands;Saipan;670;OC;USD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Northern_Mariana_Islands.jpg
+NC;New Caledonia;Nouméa;687;OC;XPF;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/New_Caledonia.jpg
+NF;Norfolk Island;Kingston;672;OC;AUD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Norfolk_Island.jpg
+NR;Nauru;Nauru;674;OC;AUD;"Nauru: nau; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Nauru.jpg
+NU;Niue;Alofi;683;OC;NZD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Niue.jpg
+NZ;New Zealand;Wellington;64;OC;NZD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/New_Zealand.jpg
+PF;French Polynesia;Papeete;687;OC;XPF;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/French_Polynesia.jpg
+PG;Papua-New Guinea;Port Moresby;675;OC;PGK;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Papua-New_Guinea.jpg
+PN;Pitcairn;Adamstown;672;OC;NZD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Pitcairn.jpg
+PW;Palau;Koror;680;OC;USD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Palau.jpg
+SB;Solomon Islands;Honiara;677;OC;SBD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Solomon.jpg
+TK;Tokelau;-;690;OC;NZD;"Polli (Tokelau): tok; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Tokelau.jpg
+TO;Tonga;Nuku'alofa;676;OC;TOP;"Tonga (Nyasa): tog; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Tonga.jpg
+TV;Tuvalu;Funafuti;688;OC;TVD;"Tuvinian: tyv; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Tuvalu.jpg
+UM;United States Minor Outlying Islands;-;808;OC;USD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/United_States_Minor_Outlying_Islands.jpg
+VU;Vanuatu;Port Vila;678;OC;VUV;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Vanuatu.jpg
+WF;Wallis And Futuna;Mata-Utu;685;OC;XPF;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Wallis_And_Futuna.jpg
+WS;Western Samoa;Apia;685;OC;WST;"Arabic: ara; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Western.jpg
+;;;;;;;
+AM;The Americas;;;;;;
+;;;;;;;
+AG;Antigua & Barbuda;St. John's;1;AM;XCD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Antigua.jpg
+AI;Anguilla;The Valley;264;AM;CAD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Anguilla.jpg
+AN;Netherlands Antilles;Willemstad;599;AM;ANG;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Netherlands_Antilles.jpg
+AR;Argentina;Buenos Aires;54;AM;ARS;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Argentina.jpg
+AW;Aruba;Oranjestad;297;AM;AWG;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Aruba.jpg
+BB;Barbados;Bridgetown;1;AM;BBD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Barbados.jpg
+BM;Bermuda;Hamilton;441;AM;BMD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Bermuda.jpg
+BO;Bolivia;La Paz;591;AM;BOB;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Bolivia.jpg
+BR;Brazil;Brasilia;55;AM;BRL;"Portuguese: por; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Brazil.jpg
+BS;Bahamas;Nassau;1;AM;BSD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Bahamas.jpg
+BZ;Belize;Belmopan;501;AM;BZD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Belize.jpg
+CA;Canada;Ottawa;1;AM;CAD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Canada.jpg
+CL;Chile;Santiago;56;AM;CLP;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Chile.jpg
+CO;Colombia;Bogota;57;AM;COP;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Colombia.jpg
+CR;Costa Rica;San Jose;506;AM;CRC;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Costa_Rica.jpg
+CU;Cuba;Havana;53;AM;CUP;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Cuba.jpg
+DM;Dominica;Roseau;1;AM;XCD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Dominica.jpg
+DO;Dominican Republic;Santo Domingo;1;AM;DOP;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Dominica.jpg
+EC;Ecuador;Quito;593;AM;USD;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Ecuador.jpg
+FK;Falkand Islands (Malvinas);Port Stanley;500;AM;FKP;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Falkland_Islands.Jpg
+GD;Grenada;St. George's;1;AM;XCD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Grenada.jpg
+GF;French Guiana;Cayenne;594;AM;EUR;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/French_Guiana.jpg
+GP;Guadeloupe;Basse-Terre;590;AM;EUR;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Guadeloupe.jpg
+GS;South Georgia & South Sandwich Islands;Grytviken;0;AM;GBP;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/South_Georgia_And_South_Sandwich_Islands.jpg
+GT;Guatemala;Guatemala;502;AM;GTQ;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Guatemal.jpg
+GY;Guyana;Georgetown;592;AM;GYD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Guyana.jpg
+HN;Honduras;Tegucigalpa;504;AM;HNL;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Honduras.jpg
+HT;Haiti;Port-Au-Prince;509;AM;HTG;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Haiti.jpg
+JM;Jamaica;Kingston;1;AM;JMD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Jamaica.jpg
+KN;St. Kitts & Nevis;Basseterre;1;AM;XCD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/St._Kitts_Nevis.jpg
+KY;Cayman Islands;George Town;345;AM;KYD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Cayman_Islands.jpg
+LC;St. Lucia;Castries;1;AM;XCD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/St._Lucia.jpg
+MQ;Martinique;Fort-de-France;596;AM;EUR;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Martinique.jpg
+MS;Montserrat;Plymouth;664;AM;XCD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Montserrat.jpg
+MX;Mexico;Mexico City;52;AM;MXN;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Mexico.jpg
+NI;Nicaragua;Managua;234;AM;NIO;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Nicaragua.jpg
+PA;Panama;Panama;507;AM;PAB;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Panama.jpg
+PE;Peru;Lima;51;AM;PEN;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Peru.jpg
+PM;Saint Pierre And Micquelon;Saint Pierre;508;AM;EUR;"French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Saint_Pierre_And_Micquelon.jpg
+PR;Puerto Rico;San Juan;787;AM;USD;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Puerto_Rico.jpg
+PY;Paraguay;Asuncion;595;AM;PYG;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Paraguay.jpg
+SH;Saint Helena;Jamestown;503;AM;SHP;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Saint_Helena.jpg
+SR;Suriname;Paramaribo;597;AM;SRD;"Dutch: nl; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Suriname.jpg
+SV;El Salvador;San Salvador;503;AM;SVC;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/El_Salvador.jpg
+TC;Turks And Caicos Islands;"Cockburn Town; Grand Turk";649;AM;USD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Turks_And_Caicos_Islands.jpg
+TT;Trinidad & Tobago;Port of Spain;1;AM;TTD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Trinidad.jpg
+US;United States;Washington;1;AM;USD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/USA.jpg
+UY;Uruguay;Montevideo;598;AM;UYU;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Uruguay.jpg
+VC;St. Vincent & Grenadines;Kingstown;1;AM;XCD;"English: eng; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/St._Vincent-Grenadines.jpg
+VE;Venezuela;Caracas;58;AM;VEB;"Spanish: es; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Venezuela.jpg
+VG;Virgin Islands -  British;Road Town;1284;AM;USD;;http://www.oorsprong.org/WebSamples.CountryInfo/Images/Virgin_Islands_British.jpg
+VI;Virgin Islands -  U.S.;Charlotte Amalie;340;AM;USD;"English: eng; Spanish: es; French: fr; ";http://www.oorsprong.org/WebSamples.CountryInfo/Images/Virgin_Islands_U.S.jpg

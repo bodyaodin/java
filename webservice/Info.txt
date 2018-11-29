@@ -1,0 +1,7 @@
+Test task: create service to read country info from WSDL and write it to CSV file.
+
+There is a public web site:
+http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL
+Retrieve information about the country code and country name from it and save it in the Excel file (Maybe a simple csv).
+If you can expand this information with a capital, a digital country code, a currency code, this is only a plus.
+The first request should be here - ListOfContinentsByName, the second part of the information is here - FullCountryInfo. 
