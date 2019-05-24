@@ -1,23 +1,24 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
+import java.util.Random;
 
 public class Arrays {
 	
 	public static void main(String[] args) {
-		
-		Arrays obj = new Arrays();
 		
 		List<List<Integer>> groupedNums = new ArrayList<List<Integer>>();
 
 		int[] array = new int[20];
 		int sum = 10;
 		
+		Random random = new Random();
+		
 		for(int i = 0; i < array.length; i++) {
-			array[i] = (int) Math.round(Math.random() * 9);
+			array[i] = random.nextInt(10);
 		}
 		
-		groupedNums = obj.getNumsFromArrayAndGroup(array, sum);
+		groupedNums = Arrays.getNumsFromArrayAndGroup(array, sum);
 	    
 		for(List<Integer> couple : groupedNums) {
 			for(Integer num : couple) {
@@ -27,13 +28,13 @@ public class Arrays {
 	    	}
 	}
 	
-	List<List<Integer>> getNumsFromArrayAndGroup (int[] array, int sum) {
+	static List<List<Integer>> getNumsFromArrayAndGroup (int[] array, int sum) {
 		List<List<Integer>> listOfCouples = new ArrayList<List<Integer>>();
 		List<Integer> coupleOfNums;
 		
 		for(int i = 0; i < array.length; i++) {
-			for(int j = 0; j < array.length; j++) {
-				if(i != j && array[i] + array[j] == sum) {
+			for(int j = i + 1; j < array.length; j++) {
+				if(array[i] + array[j] == sum) {
                     			coupleOfNums = new ArrayList<Integer>();
                     
                     			coupleOfNums.add(array[i]);
