@@ -19,12 +19,12 @@ public class Arrays {
 		
 		groupedNums = obj.getNumsFromArrayAndGroup(array, sum);
 	    
-	    for(List<Integer> couple : groupedNums) {
-	        for(Integer num : couple) {
-	            System.out.print(num + " ");
-	        }
-	        System.out.println();
-	    }
+		for(List<Integer> couple : groupedNums) {
+			for(Integer num : couple) {
+				System.out.print(num + " ");
+	        	}
+	        	System.out.println();
+	    	}
 	}
 	
 	List<List<Integer>> getNumsFromArrayAndGroup (int[] array, int sum) {
@@ -34,16 +34,16 @@ public class Arrays {
 		for(int i = 0; i < array.length; i++) {
 			for(int j = 0; j < array.length; j++) {
 				if(i != j && array[i] + array[j] == sum) {
-                    coupleOfNums = new ArrayList<Integer>();
+                    			coupleOfNums = new ArrayList<Integer>();
                     
-                    coupleOfNums.add(array[i]);
-                    coupleOfNums.add(array[j]);
+                    			coupleOfNums.add(array[i]);
+                    			coupleOfNums.add(array[j]);
                     
-                    List<Integer> reverseList = new ArrayList<Integer>(coupleOfNums);                    
-                    Collections.reverse(reverseList);
+                    			List<Integer> reverseList = new ArrayList<Integer>(coupleOfNums);                    
+                    			Collections.reverse(reverseList);
                     
-                    if(!listOfCouples.contains(coupleOfNums) && !listOfCouples.contains(reverseList)) {
-                        listOfCouples.add(coupleOfNums);
+                    			if(!listOfCouples.contains(coupleOfNums) && !listOfCouples.contains(reverseList)) {
+                        			listOfCouples.add(coupleOfNums);
 					} 
 				}
 			}
@@ -51,5 +51,4 @@ public class Arrays {
 		
 		return listOfCouples;
 	}
-
 }
