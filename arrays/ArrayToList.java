@@ -2,12 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 import java.util.Random;
+import java.util.Arrays;
 
-public class Arrays {
+public class ArrayToList {
 	
 	public static void main(String[] args) {
 		
-		List<List<Integer>> groupedNums = new ArrayList<List<Integer>>();
+		List<List<Integer>> groupedNums;
 
 		int[] array = new int[20];
 		int sum = 10;
@@ -18,7 +19,7 @@ public class Arrays {
 			array[i] = random.nextInt(10);
 		}
 		
-		groupedNums = Arrays.getNumsFromArrayAndGroup(array, sum);
+		groupedNums = ArrayToList.getNumsFromArrayAndGroup(array, sum);
 	    
 		for(List<Integer> couple : groupedNums) {
 			for(Integer num : couple) {
@@ -35,11 +36,8 @@ public class Arrays {
 		for(int i = 0; i < array.length; i++) {
 			for(int j = i + 1; j < array.length; j++) {
 				if(array[i] + array[j] == sum) {
-                    			coupleOfNums = new ArrayList<Integer>();
-                    
-                    			coupleOfNums.add(array[i]);
-                    			coupleOfNums.add(array[j]);
-                    
+                    			coupleOfNums = Arrays.asList(array[i], array[j]);
+                                        
                     			List<Integer> reverseList = new ArrayList<Integer>(coupleOfNums);                    
                     			Collections.reverse(reverseList);
                     
